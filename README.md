@@ -1,9 +1,3 @@
----
-language: en
-style: ASD-STE100
-last_reviewed: 2026-10-05
----
-
 # Sentinel Engine
 
 | 🎯 Pitch | 💬 Live demo | 📊 Presentation | 🎬 Video |
