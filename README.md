@@ -1,5 +1,7 @@
 # Sentinel Engine
 
+«Hackathon submission, Oct 2026. Development continues at sentinel-engine»)
+
 | 🎯 Pitch | 💬 Live demo | 📊 Presentation | 🎬 Video |
 |---|---|---|---|
 | [Project site](https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/?lang=en) | [Demo on Azure](https://sentinel-engine.ambitiousmoss-1416426d.eastus.azurecontainerapps.io) | [Slides](https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/slides/deck.html) | <!-- video-url -->[Watch on YouTube](https://youtu.be/0bjonPPvhEA)<!-- /video-url --> |
