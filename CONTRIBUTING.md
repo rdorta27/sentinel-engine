@@ -23,7 +23,6 @@ This page tells a person how to work in this repository. [`AGENTS.md`](AGENTS.md
 - Add a body with two blocks. The first block gives the reason in prose. The second block starts with the line `Changes:` and holds one or more `- ` bullets.
 - Do not put a version number in a message. A tag holds the version.
 - Do not add a `Co-Authored-By` trailer.
-- Activate the hook once per clone: `git config core.hooksPath .githooks`.
 
 ## Plans
 

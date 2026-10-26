@@ -1,7 +1,7 @@
 ---
 language: en
 style: ASD-STE100
-last_reviewed: 2026-10-04
+last_reviewed: 2026-10-26
 ---
 
 # AGENTS.md
@@ -16,7 +16,7 @@ The judges evaluate the hackathon in English. The whole repository is in English
 |---|---|---|
 | [`team/`](team/) | English | Internal planning, ready for the submission. |
 | [`docs/`](docs/) | English | The working copy that the team edits each day. |
-| Root [`README.md`](README.md), slides, video script | English | The deliverable that the evaluators read. |
+| Root [`README.md`](README.md), slides | English | The deliverable that the evaluators read. |
 
 **Rule of thumb: write everything in English from the first draft.** There is no translation pass at the end. REQ-0051 tracks this. The status table is in [`docs/build/delivery.md`](docs/build/delivery.md#language).
 
@@ -89,7 +89,7 @@ Accepted decisions that the code must follow:
 ## Rules
 
 - **No secrets and no data in the repository.** The repository is public. Credentials are in `.env` (gitignored). Teammates share them by direct message. Never commit the hackathon datasets (`data/` is gitignored). The one exception is the official data dictionary in [`docs/data/reference/`](docs/data/reference/): schema, not rows.
-- **Commit messages** follow Conventional Commits with a mandatory body of two blocks. [`.githooks/commit-msg`](.githooks/commit-msg) enforces this. Activate it once per clone: `git config core.hooksPath .githooks`.
+- **Commit messages** follow Conventional Commits with a mandatory body of two blocks. The owner checks the format with a local hook that the repository does not ship.
 - **Decisions:** product and technique decisions go to [`docs/build/decisions/`](docs/build/decisions/), one file each, from the template. Team decisions go to [`team/plan.md`](team/plan.md). List the requirements that a decision cites in [`docs/requirements/requirements.md`](docs/requirements/requirements.md).
 - **Label what is real.** Each component, data source and number is real, mock, synthetic, team-generated, simulation or projection, as [what is real](docs/architecture/what-is-real.md) defines. Never show a simulation or a projection as a production measurement.
 - **Evidence runs are write-once.**
@@ -99,6 +99,6 @@ Accepted decisions that the code must follow:
   - Scripts read the bucket name from `.env` and the data from the gitignored data folders. Never write the bucket name, account ids or dataset rows in the repository.
 - **The test suite makes the adversarial evidence, not a person.** From `sentinel-ai-core/`, run `SENTINEL_WRITE_EVIDENCE=1 python -m pytest tests/adversarial -q`. It writes one new run under `evidence/adversarial/<run-id>/summary.json`. The counts come from the real pytest outcomes. The denominator of `unsafe_outcome_rate` is every attack attempted. See [`sentinel-ai-core/tests/adversarial/summary.py`](sentinel-ai-core/tests/adversarial/summary.py).
 - **Specs and changes** use OpenSpec (`/opsx:propose`, `/opsx:apply`, and others) with the rules in [`openspec/config.yaml`](openspec/config.yaml): English only, in ASD-STE100, and each capability traced to a `REQ-####`.
-- **No `Co-Authored-By` trailers.** The commit hook refuses them. Credit people in the message body.
+- **No `Co-Authored-By` trailers.** Credit people in the message body.
 - **No push and no pull request without an explicit request** from the repository owner.
 - **PDFs:** run `python3 estilos/build.py` from outside the repository. PDFs are gitignored.
