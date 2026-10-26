@@ -602,5 +602,8 @@
  "Six slides: the problem, Sentinel, how it works, the proof, the value for a bank, and what comes next.": "Seis diapositivas: el problema, Sentinel, cómo funciona, la prueba, el valor para un banco y lo que sigue.",
  "<1>Open the live demo</1> <2>Watch the video</2> <3>Repository</3>": "<1>Abrir la demo en vivo</1> <2>Ver el video</2> <3>Repositorio</3>",
  "<1>Try the demo</1> <2>Watch the video</2> <3>Explore the architecture</3>": "<1>Probar la demo</1> <2>Ver el video</2> <3>Explorar la arquitectura</3>",
- "Live demo: the link and the test credentials are in the submission email. Demo data is synthetic. Video: <1></1>": "Demo en vivo: el enlace y las credenciales de prueba están en el correo de entrega. Los datos de la demo son sintéticos. Video: <1></1>"
+ "Live demo: the link and the test credentials are in the submission email. Demo data is synthetic. Video: <1></1>": "Demo en vivo: el enlace y las credenciales de prueba están en el correo de entrega. Los datos de la demo son sintéticos. Video: <1></1>",
+ "<1>Cases.</1> The live demo is retired. The four cases and the demo lines stay in the <2>demo replay</2>.": "<1>Casos.</1> La demo en vivo fue retirada. Los cuatro casos y las líneas de la demo siguen en el <2>replay de la demo</2>.",
+ "<1>Repository</1>": "<1>Repositorio</1>",
+ "Archived hackathon project. The demo and the video are retired.": "Proyecto de hackathon archivado. La demo y el video fueron retirados."
 }

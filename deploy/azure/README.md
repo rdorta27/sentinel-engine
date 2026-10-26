@@ -1,5 +1,7 @@
 # Deploy to Azure Container Apps
 
+> **Retired.** The hackathon demo is paused and its public link is off. These steps stay as a record. Do not redeploy from this repository: development continues in [sentinel-engine](https://github.com/rdorta27/sentinel-engine).
+
 How to publish the app to the public link. Why Azure Container Apps and what the
 link runs: [decision 019](../../docs/build/decisions/019-azure-container-apps.md) and
 [what the public link runs](../../docs/rationale/public-link.md).

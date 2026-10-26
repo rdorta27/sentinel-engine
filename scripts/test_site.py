@@ -310,7 +310,7 @@ def test_home_page_links_every_diagram_and_the_slides():
         assert f'href="{target}"' in home, target
         assert (SITE / target).exists()
     assert 'property="og:image"' in home and (SITE / "preview.png").exists()
-    assert 'id="limits"' in home and "submission email" in home
+    assert 'id="limits"' in home
 
 
 def test_turn_page_uses_demo_lines_and_real_stops():

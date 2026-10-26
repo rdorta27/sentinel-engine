@@ -72,7 +72,7 @@ Safety in code, before and around the model call:
 
 The [architecture](docs/architecture/README.md) pages give the target system, the demo with its mocks, and the specification.
 
-**Live link.** The demo runs on Azure Container Apps with one replica until the awards ([019](docs/build/decisions/019-azure-container-apps.md)). It uses labelled mock data and `router_v2` (prompt `v2`), and it keeps its state on an Azure Files share. The live revision is from 2026-10-05. Its `/health` `bundle_hash` is `2efe5962f9a50d0b4fed8e7b91c10a4c7fd212d5229d74a2e58d1024ee96dfd2`, the hash of the sealed v8 measurement.
+**Live link (retired).** The demo ran on Azure Container Apps ([019](docs/build/decisions/019-azure-container-apps.md)) with labelled mock data and `router_v2` (prompt `v2`). The app is paused and its public link is off. The last live revision was from 2026-10-05, with `/health` `bundle_hash` `2efe5962f9a50d0b4fed8e7b91c10a4c7fd212d5229d74a2e58d1024ee96dfd2`, the hash of the sealed v8 measurement.
 
 ## Headline results
 
