@@ -13,7 +13,7 @@ The project marks each milestone with a tag. `1.0.0` is the delivered state and 
 
 ## 1.0.1 - 2026-10-26
 
-The hackathon is over. This tag is the archived record of the repository.
+The hackathon is over. This release is the archived record of the hackathon repository `factored-hackathon-2026-sentinel-engine`. Development continues here.
 
 - Pause the live demo on Azure Container Apps: ingress off and no minimum replica. The public link is retired.
 - Make the video private on YouTube and remove its links from the README, the site, the slides, `docs/` and `team/`.
