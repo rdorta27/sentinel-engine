@@ -9,11 +9,19 @@ last_reviewed: 2026-10-05
 All notable changes to this repository are in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-The project marks each milestone with a tag. Two tags exist: `v0.9-demo` for the demo code and `v1.0-submission` for the delivered state.
+The project marks each milestone with a tag. `1.0.0` is the delivered state and `1.0.1` is the archived record. The headings `v0.9-demo` and `v1.0-submission` below are the planned milestone names; the tag `1.0.0` replaced them.
 
-## Unreleased
+## 1.0.1 - 2026-10-26
 
-The final measurement and the final redeploy come after the code freeze. `post-freeze` writes the last entries (task 5.2) and the owner creates `v1.0-submission` after the final deploy.
+The hackathon is over. This tag is the archived record of the repository.
+
+- Pause the live demo on Azure Container Apps: ingress off and no minimum replica. The public link is retired.
+- Make the video private on YouTube and remove its links from the README, the site, the slides, `docs/` and `team/`.
+- Delete the `video/` directory with the script and the mock pages, and the two scripts that read it.
+- Add an archived notice to the README and a retired banner to the Azure deploy guide.
+- Regenerate the Spanish and Portuguese pages from the English source, so the site checks pass.
+- Verify the archive: the three test suites pass and gitleaks finds no leak in the history.
+- Development continues in `sentinel-engine`.
 
 ## v0.9-demo - 2026-10-05
 
