@@ -269,7 +269,7 @@ SLOT = re.compile(
 # Markdown pages use <!--n:key-->text<!--/n--> (invisible when rendered).
 # <!--n~:key--> writes the reading form of a large count (79,000+).
 MD_SLOT = re.compile(r"(<!--n(~?):(\w+)-->)(.*?)(<!--/n-->)", re.S)
-MD_FILES = [ROOT / "video" / "script.md"]
+MD_FILES: list[Path] = []
 
 
 def sync_markdown(numbers: dict, check: bool = False) -> list[Path]:

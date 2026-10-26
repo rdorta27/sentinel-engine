@@ -63,7 +63,7 @@ gantt
 | Prompted router behind `ModelPort` with route table, fixtures and safe fallback (change archived 9/30) | Accepted | `openspec/specs/llm-router/spec.md` |
 | Evaluation evidence frozen: label universe, mix and thresholds in `evidence/evaluation/2024Q4-v1/` (change archived 9/30) | Accepted | `openspec/specs/evaluation-evidence/spec.md` |
 | Evaluation runner frozen: bench and system replay in `evidence/evaluation-runs/2024Q4-eval-v1/` (change archived 9/30) | Accepted | `openspec/specs/evaluation-runner/spec.md` |
-| Video and slides: Rubén. Script from Thursday 10/1. Slide outline on Thursday 10/1, validated by the group on Friday 10/2, reviewed from Friday to Monday with the results. Frozen on Monday 10/5. The video is published at https://youtu.be/0bjonPPvhEA (decision 20) | Accepted | [delivery](../docs/build/delivery.md) |
+| Video and slides: Rubén. Script from Thursday 10/1. Slide outline on Thursday 10/1, validated by the group on Friday 10/2, reviewed from Friday to Monday with the results. Frozen on Monday 10/5. The video is published at (retired after the hackathon) (decision 20) | Accepted | [delivery](../docs/build/delivery.md) |
 | Tasks live in the repository. The follow-up is in the team channel. Rubén reviews what is still pending (decision 6) | Accepted | [tasks](tasks.md) |
 | Code: branch, push, Slack authorization, the author merges. No direct push to `main` (decision 7) | Accepted | [pending decisions](pending-decisions.md) |
 | No standing milestone meetings. Ad hoc only (decision 8) | Accepted | [pending decisions](pending-decisions.md) |

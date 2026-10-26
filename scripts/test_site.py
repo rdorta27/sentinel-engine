@@ -217,7 +217,6 @@ def test_deck_in_the_browser_and_pdf():
 
 def test_markdown_number_marks_match_the_evidence():
     assert sn.sync_markdown(json.loads(sn.OUT.read_text())["numbers"], check=True) == []
-    assert "<!--n:" in (sn.ROOT / "video/script.md").read_text()
 
 
 # --- all diagrams (task 4.6) ---

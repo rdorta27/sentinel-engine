@@ -115,7 +115,7 @@ Give a link to the running tool, with usage limits and spending limits. A minima
 
 - **Router version.** The live link serves router_v2. The team checked it on 2026-10-02 with `GET /api/v1/health` (`model` `accounts/fireworks/models/glm-5p3-flash`, `prompt_version` `v2`, `gold_source` `mock`).
 - **Redeploy.** The team redeployed the image on 2026-10-03 from `main` (`9664d9d`, PR #52). It now carries the keys that PRs #49 and #50 added.
-- **Earlier proof.** The live link is `https://sentinel-engine.ambitiousmoss-1416426d.eastus.azurecontainerapps.io`. The team deployed it on 10/02 from [deploy/azure](../../deploy/azure/deploy.sh) under [019](../build/decisions/019-azure-container-apps.md). Hugging Face dropped its free Docker tier, so [019](../build/decisions/019-azure-container-apps.md) supersedes [012](../build/decisions/012-public-deployment.md).
+- **Earlier proof.** The live link (retired after the hackathon) was. The team deployed it on 10/02 from [deploy/azure](../../deploy/azure/deploy.sh) under [019](../build/decisions/019-azure-container-apps.md). Hugging Face dropped its free Docker tier, so [019](../build/decisions/019-azure-container-apps.md) supersedes [012](../build/decisions/012-public-deployment.md).
 - **Remote checks on 10/02.** `GET /api/v1/health` returns `{"status":"ok","gold_source":"mock","state_backend":"sqlite","reference_date":"2026-06-17"}`. The page and the branding load. `CUST-0001` logs in and creates a dispute (201). `ADV-0001` sees the handoffs.
 - **Usage and spending limits.** Hosting sits inside the Azure monthly free grant. The registry adds about USD 0.08 a day. All of it stays within the USD 200 trial credit ([cost](../build/cost.md)).
 - **Hardening of 10/02.** The deploy uses one replica, because SQLite is per instance. It uses a non-root user, with state under `/tmp/sentinel`. It has a container healthcheck. The health route answers 503 when the state store fails.
@@ -156,7 +156,7 @@ Make a short, mandatory video (3 minutes at most). It shows the working solution
 
 **Depends on:** [REQ-0009](frontend-backend.md#req-0009), [REQ-0010](frontend-backend.md#req-0010), [REQ-0011](frontend-backend.md#req-0011), [REQ-0035](#req-0035). The video shows the three demo cases on the deployed tool.
 
-**Evidence:** Proven by: the published video at https://youtu.be/0bjonPPvhEA. It lasts 3 minutes at most and uses the voice of the owner, in English. The [script](../../video/script.md) matches the final build and the shot list. See [delivery](../build/delivery.md#video-pitch).
+**Evidence:** Proven by: the video (retired after the hackathon). It lasts 3 minutes at most and uses the voice of the owner, in English. The script matches the final build and the shot list. See [delivery](../build/delivery.md#video-pitch).
 
 <a id="req-0051"></a>
 ### REQ-0051 · Everything in English

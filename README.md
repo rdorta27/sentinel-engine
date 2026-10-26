@@ -1,12 +1,8 @@
 # Sentinel Engine
 
-«Hackathon submission, Oct 2026. Development continues at sentinel-engine»)
+> **Archived.** This repository is the Factored Hackathon 2026 submission and is read-only. The live demo and the video are retired. Development continues in [sentinel-engine](https://github.com/rdorta27/sentinel-engine).
 
-| 🎯 Pitch | 💬 Live demo | 📊 Presentation | 🎬 Video |
-|---|---|---|---|
-| [Project site](https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/?lang=en) | [Demo on Azure](https://sentinel-engine.ambitiousmoss-1416426d.eastus.azurecontainerapps.io) | [Slides](https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/slides/deck.html) | <!-- video-url -->[Watch on YouTube](https://youtu.be/0bjonPPvhEA)<!-- /video-url --> |
-
-The demo credentials come in the submission email.
+The [project site](https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/?lang=en) and the [slides](https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/slides/deck.html) stay as the record.
 
 **The AI talks. The rules decide.**
 
@@ -137,7 +133,6 @@ The [documentation index](docs/README.md) gives the full reading order.
 | **Pitch** | |
 | [`site/`](site/) | The project site on GitHub Pages, in English, Spanish and Portuguese. The slides (`site/slides/`) and the diagrams (`site/diagrams/`). |
 | [`branding/`](branding/BRANDING.md) | The brand tokens, the fonts and the chat styles |
-| [`video/`](video/script.md) | The video script: the voice-over, the shot list and the mock page for each shot |
 | **Tooling** | |
 | [`scripts/`](scripts/) | Repository scripts: site numbers, diagrams, link checks, slide export and load runs |
 | [`openspec/`](openspec/) | OpenSpec specs and the archive of each change |

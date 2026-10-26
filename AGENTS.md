@@ -69,7 +69,6 @@ grep -rl '^style: ASD-STE100' --include=*.md . | grep -v AGENTS.md
 | [`team/`](team/) | Plan, tasks and pending decisions |
 | [`evidence/`](evidence/README.md) | Frozen, reproducible runs (scripts and `summary.json`) that the docs cite. [`evidence/README.md`](evidence/README.md) indexes each run with its status and data type. |
 | [`openspec/`](openspec/) | OpenSpec config, specs and changes |
-| [`video/`](video/script.md) | The video script, with the voice-over and the shot list |
 | [`scripts/`](scripts/) | Repository scripts. `render_flow_measurements.py` generates the flow measurements page and can verify it against a new run. |
 | [`sentinel-data-engine/`](sentinel-data-engine/) | Data pipeline (Bronze, Silver, Gold). Owner: Natalia. |
 | [`sentinel-ai-core/`](sentinel-ai-core/) | Charge-inquiry loop, policy engine, the page (customer chat and advisor view) and the API under `/api/v1`. Owners are in [team/plan.md](team/plan.md#folders). |
