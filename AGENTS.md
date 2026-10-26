@@ -10,13 +10,13 @@ Guidance for each person or AI agent who works in this repository.
 
 ## Language
 
-The judges evaluate the hackathon in English. The whole repository is in English, working documents included.
+The whole repository is in English, working documents included.
 
 | Where | Language | Why |
 |---|---|---|
-| [`team/`](team/) | English | Internal planning, ready for the submission. |
+| [`team/`](team/) | English | Planning notes and the record of the first phase. |
 | [`docs/`](docs/) | English | The working copy that the team edits each day. |
-| Root [`README.md`](README.md), slides | English | The deliverable that the evaluators read. |
+| Root [`README.md`](README.md), slides | English | What a reader sees first. |
 
 **Rule of thumb: write everything in English from the first draft.** There is no translation pass at the end. REQ-0051 tracks this. The status table is in [`docs/build/delivery.md`](docs/build/delivery.md#language).
 
@@ -88,7 +88,7 @@ Accepted decisions that the code must follow:
 
 ## Rules
 
-- **No secrets and no data in the repository.** The repository is public. Credentials are in `.env` (gitignored). Teammates share them by direct message. Never commit the hackathon datasets (`data/` is gitignored). The one exception is the official data dictionary in [`docs/data/reference/`](docs/data/reference/): schema, not rows.
+- **No secrets and no data in the repository.** The repository is public. Credentials are in `.env` (gitignored). Teammates share them by direct message. Never commit the datasets (`data/` is gitignored). The one exception is the official data dictionary in [`docs/data/reference/`](docs/data/reference/): schema, not rows.
 - **Commit messages** follow Conventional Commits with a mandatory body of two blocks. The owner checks the format with a local hook that the repository does not ship.
 - **Decisions:** product and technique decisions go to [`docs/build/decisions/`](docs/build/decisions/), one file each, from the template. Team decisions go to [`team/plan.md`](team/plan.md). List the requirements that a decision cites in [`docs/requirements/requirements.md`](docs/requirements/requirements.md).
 - **Label what is real.** Each component, data source and number is real, mock, synthetic, team-generated, simulation or projection, as [what is real](docs/architecture/what-is-real.md) defines. Never show a simulation or a projection as a production measurement.

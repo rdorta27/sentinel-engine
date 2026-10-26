@@ -1,6 +1,6 @@
 # Sentinel Engine
 
-> **Status:** active development. Sentinel started as the Factored AI & Data Hackathon 2026 submission. There is no public demo: run it locally ([Run it locally](#run-it-locally)). The hackathon history is in the [changelog](CHANGELOG.md).
+> **Status:** active development. There is no public demo: run it locally ([Run it locally](#run-it-locally)). The history is in the [changelog](CHANGELOG.md).
 
 **The AI talks. The rules decide.**
 
@@ -70,7 +70,7 @@ Safety in code, before and around the model call:
 
 The [architecture](docs/architecture/README.md) pages give the target system, the demo with its mocks, and the specification.
 
-**No public demo.** The hackathon demo on Azure Container Apps ([019](docs/build/decisions/019-azure-container-apps.md)) was retired on 2026-10-26. The last live revision was from 2026-10-05, with `/health` `bundle_hash` `2efe5962f9a50d0b4fed8e7b91c10a4c7fd212d5229d74a2e58d1024ee96dfd2`, the hash of the sealed v8 measurement.
+**No public demo.** The earlier demo on Azure Container Apps ([019](docs/build/decisions/019-azure-container-apps.md)) was retired on 2026-10-26. The last live revision was from 2026-10-05, with `/health` `bundle_hash` `2efe5962f9a50d0b4fed8e7b91c10a4c7fd212d5229d74a2e58d1024ee96dfd2`, the hash of the sealed v8 measurement.
 
 ## Headline results
 
@@ -97,7 +97,7 @@ The [metrics report](docs/build/metrics-report.md) gives the intervals, the brea
 
 | You want to know | Go to |
 |---|---|
-| What the challenge asks and how the judges score it | [The challenge](docs/overview.md) |
+| What the original brief asks and how it is scored | [The brief](docs/overview.md) |
 | What the product does for a bank | [Product](docs/product.md) · [Project site](site/) |
 | Which parts are real and which are mocks | [What is real](docs/architecture/what-is-real.md) · [Mocks](docs/architecture/mocks.md) |
 | Why we chose transaction disputes | [Flow selection](docs/build/flows/03-flow-selection.md) |
@@ -118,7 +118,7 @@ The [documentation index](docs/README.md) gives the full reading order.
 | **Product code** | |
 | [`sentinel-ai-core/`](sentinel-ai-core/README.md) | The service: FastAPI, the orchestrator, the policy engine, the tools, the chat page and the advisor view (`app/`). The evaluation harness with the development cases, the sealed held-out set and the resolution set (`eval/`). The tests, with the adversarial suite (`tests/`). |
 | [`sentinel-data-engine/`](sentinel-data-engine/README.md) | The medallion pipeline (S3 → Bronze → Silver → Gold) on Delta Lake. 13 LATAM Bank tables, about 19 M records. |
-| [`deploy/azure/`](deploy/azure/README.md) | The Azure Container Apps deployment script, the judge users and the log queries. The hackathon demo is retired; kept as a reference |
+| [`deploy/azure/`](deploy/azure/README.md) | The Azure Container Apps deployment script, the judge users and the log queries. The demo is retired; kept as a reference |
 | **Proof** | |
 | [`evidence/`](evidence/README.md) | Frozen, reproducible runs. Each run has its scripts and a `summary.json`. The index gives the status and the data type of each run. |
 | [`docs/build/metrics-report.md`](docs/build/metrics-report.md) | The full measurement, with intervals and limits |
