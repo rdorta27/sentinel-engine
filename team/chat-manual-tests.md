@@ -6,6 +6,8 @@ last_reviewed: 2026-10-05
 
 # Chat manual tests
 
+This page is the record of the first phase. It is not the current plan. The index is in [the team record](README.md).
+
 This page records observations from hands-on tests of the served chat. It has one entry for each test, the newest last. The entries are development material. The team saw the dialogues while it fixed the system. None of them can enter a sealed held-out set. When the chat plan ([chat behavior](chat-behavior-plan.md)) reaches the case-writing step, each entry becomes a labeled development case marked "manual test".
 
 Setup, unless an entry says otherwise: router_v2 (GLM 5.3 Flash, prompt v2) on the Gold mock, reference date 2026-06-17 and the test customer `CUST-0001` (account country MX). Each text below is synthetic. The chat plan defines the capabilities in the "Capability" line of each entry.

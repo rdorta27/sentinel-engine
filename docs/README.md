@@ -6,7 +6,7 @@ last_reviewed: 2026-10-27
 
 # Documentation
 
-This folder holds the product, the requirements, the design and the reasons for each choice. Team planning is in [`team/`](../team/). The measurement runs are in [`evidence/`](../evidence/README.md).
+This folder holds the product, the requirements, the design and the reasons for each choice. The record of the first phase is in [`team/`](../team/). The measurement runs are in [`evidence/`](../evidence/README.md).
 
 All documents are in English ([language](build/delivery.md#language)). The original brief is not in the repository. The one exception is the data dictionary in [data/reference/](data/reference/).
 
@@ -44,7 +44,7 @@ Read these pages in this order. It takes about 20 minutes.
 | Which data sources do we use, and where do they come from? | [Data inventory](data_inventory.md), [dataset](data/dataset.md) |
 | What do CSAT, PQR and held-out mean? | [Glossary](glossary/) |
 | What is in the delivery record? | [Delivery](build/delivery.md) |
-| Who does what, and when? | [Plan](../team/plan.md), [tasks](../team/tasks.md), [pending decisions](../team/pending-decisions.md) |
+| Who did what in the first phase? | [Team record](../team/README.md) |
 
 ## Structure
 

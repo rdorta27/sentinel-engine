@@ -6,6 +6,8 @@ last_reviewed: 2026-10-05
 
 # Tasks
 
+This page is the record of the first phase. It is not the current plan. The index is in [the team record](README.md).
+
 This page lists who does what and by when, for each day. When you pick a task, add your name. When you finish it, mark it. If a task covers a requirement, cite its `REQ-####` and update its status in the [requirements](../docs/requirements/requirements.md).
 
 **States:** Pending, In progress, Done. Open tasks are in [open work by priority](#open-work-by-priority). Finished tasks stay in the day log.

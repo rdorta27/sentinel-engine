@@ -6,7 +6,9 @@ last_reviewed: 2026-10-05
 
 # Pending decisions
 
-This page lists the open choices. Each choice has its options, its supporting material and its deadline. The list works with a meeting or without one.
+This page is the record of the first phase. It is not the current plan. The index is in [the team record](README.md).
+
+This page lists the choices of that phase. Each choice has its options, its supporting material and its deadline. No choice is open.
 
 ## How we decide
 
@@ -19,7 +21,7 @@ This page lists the open choices. Each choice has its options, its supporting ma
 
 ## Open
 
-No choice is open. Add a new choice here with its options, its supporting material and its deadline.
+No choice is open. This list is the record of that phase.
 
 ## Decided
 

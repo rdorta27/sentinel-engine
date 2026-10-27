@@ -6,9 +6,11 @@ last_reviewed: 2026-10-05
 
 # Team plan
 
-Sentinel Engine · Factored AI & Data Hackathon 2026 · Submission: **Monday 10/5, 11:59 pm (UTC-5)**
+This page is the record of the first phase. The phase ended on 2026-10-05. It is not the current plan.
 
-> We start on Monday 9/28. The daily tasks are in [tasks](tasks.md). The open choices are in [pending decisions](pending-decisions.md).
+The names, the dates and the judge notes below stay as history. The submission date was Monday 10/5, 11:59 pm (UTC-5). The index is in [the team record](README.md).
+
+> The daily tasks are in [tasks](tasks.md). The choices of that phase are in [pending decisions](pending-decisions.md).
 
 ## Schedule
 
@@ -78,6 +80,8 @@ Product and technical decisions go in [decisions](../docs/build/decisions/), one
 
 ## Working method
 
+The method below is the method of the first phase.
+
 | Topic | How we work |
 |---|---|
 | Communication | Everything in the team channel. Challenge questions go to the hackathon help channel |
@@ -89,7 +93,7 @@ Product and technical decisions go in [decisions](../docs/build/decisions/), one
 | Progress | When a task closes, we update the card of the requirement in its type file and its row in the [requirements index](../docs/requirements/requirements.md). [Tasks](tasks.md#open-work-by-priority) orders the open tasks by priority |
 | Repository | A single repository (`sentinel-engine`). It is public from the start and it stays public |
 
-Two hackathon rules are non-negotiable. No secrets or data in the repository (credentials go in `.env` and teammates share them by direct message). The submission is in English.
+Two rules of that phase stay in force. No secrets or data in the repository. Credentials go in `.env` and teammates share them by direct message. The submission of that phase was in English.
 
 ## Folders
 

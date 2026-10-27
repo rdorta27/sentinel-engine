@@ -135,7 +135,7 @@ The [documentation index](docs/README.md) gives the full reading order.
 | [`scripts/`](scripts/) | Repository scripts: site numbers, diagrams, link checks, slide export and load runs |
 | [`openspec/`](openspec/) | OpenSpec specs and the archive of each change |
 | [`.github/workflows/`](.github/workflows/tests.yml) | CI: both test suites, the Markdown links and the requirement status that the specs cite |
-| [`team/`](team/) | Plan, tasks and pending decisions |
+| [`team/`](team/) | Record of the first phase: plan, tasks and decisions |
 
 ## Run it locally
 
@@ -243,5 +243,5 @@ What the team did not build, and why. Each row cites its evidence (REQ-0030, REQ
 |---|---|
 | A person who contributes | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 | An AI agent | [`AGENTS.md`](AGENTS.md) |
-| The plan, the tasks and the open decisions | [`team/plan.md`](team/plan.md), [`team/tasks.md`](team/tasks.md), [`team/pending-decisions.md`](team/pending-decisions.md) |
+| The record of the first phase | [`team/README.md`](team/README.md) |
 | The change history | [`CHANGELOG.md`](CHANGELOG.md) |

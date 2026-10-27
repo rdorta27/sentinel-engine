@@ -6,6 +6,8 @@ last_reviewed: 2026-10-05
 
 # Component status
 
+This page is the record of the first phase. It is not the current plan. The index is in [the team record](README.md).
+
 This page shows where the build stands on Mon 10/5. It uses the same components as the [System Architecture](../docs/architecture/system-architecture.md), painted by status. The evidence for each item is in [tasks](tasks.md) and in the [requirements](../docs/requirements/requirements.md).
 
 Legend: green = implemented and tested. Amber = partial (it works behind a mock, offline only, or not run on real data). Red = missing.

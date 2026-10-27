@@ -66,7 +66,7 @@ grep -rl '^style: ASD-STE100' --include=*.md . | grep -v AGENTS.md
 | [`docs/overview.md`](docs/overview.md), [`docs/data/`](docs/data/), [`docs/glossary/`](docs/glossary/) | The challenge overview, the dataset page with the [official data dictionary](docs/data/reference/), and the glossary of the locales |
 | [`docs/requirements/`](docs/requirements/) | Requirements. [`requirements.md`](docs/requirements/requirements.md) is the index (sources, status, dependencies). One file per type holds the cards with description and evidence. |
 | [`docs/build/`](docs/build/) | Areas, design rules, decisions, metrics and delivery |
-| [`team/`](team/) | Plan, tasks and pending decisions |
+| [`team/`](team/) | Record of the first phase: plan, tasks and decisions |
 | [`evidence/`](evidence/README.md) | Frozen, reproducible runs (scripts and `summary.json`) that the docs cite. [`evidence/README.md`](evidence/README.md) indexes each run with its status and data type. |
 | [`openspec/`](openspec/) | OpenSpec config, specs and changes |
 | [`scripts/`](scripts/) | Repository scripts. `render_flow_measurements.py` generates the flow measurements page and can verify it against a new run. |

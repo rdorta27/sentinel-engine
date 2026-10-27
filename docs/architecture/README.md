@@ -39,7 +39,7 @@ flowchart LR
 
 The picture is the target system. **\*** In the demo, these parts are mocks with the same contract: a trusted test session, a SQLite case store instead of PostgreSQL, and a demo advisor user. The full list is in [mocked components](demo-architecture.md#mocked-components) and [what is real](what-is-real.md).
 
-Legend: violet = component, blue = data store, grey = outside the system. The colours follow [`branding/`](../../branding/BRANDING.md). The picture shows the design, not the progress. The [component status](../../team/component-status.md) shows the progress.
+Legend: violet = component, blue = data store, grey = outside the system. The colours follow [`branding/`](../../branding/BRANDING.md). The picture shows the design, not the progress. The [component status](../../team/component-status.md) shows the progress on 2026-10-05.
 
 **Status on 10/4:**
 

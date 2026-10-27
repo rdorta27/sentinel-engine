@@ -6,6 +6,8 @@ last_reviewed: 2026-10-05
 
 # Plan: a chat that behaves better
 
+This page is the record of the first phase. It is not the current plan. The index is in [the team record](README.md).
+
 > **Superseded.** This plan is done. It stays as the record of the design. The status is in [component status](component-status.md) and in [tasks](tasks.md).
 
 **Status:** implemented on 2026-10-05. The sealed v8 measurement ran. `router_v2` stays served. Prompt v3 failed the zero-unsafe-wording gate and the subtype gate ([decision 018](../docs/build/decisions/018-evaluation-acceptance.md), Result v8, and [delivery](../docs/build/delivery.md#release-notes)).
