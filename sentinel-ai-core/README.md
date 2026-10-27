@@ -20,8 +20,8 @@ SENTINEL_REFERENCE_DATE=2026-06-17 python3 -m uvicorn app.main:app --port 8000
 
 ## Demo credentials (local runs, false)
 
-These credentials are for local runs and tests. The public link uses the
-credentials of the submission email. No password is in the repository.
+These credentials are for local runs and tests. No password is in the
+repository.
 
 | Login | Password | Country |
 |---|---|---|
@@ -44,10 +44,8 @@ Gold file when it exists, so these logins have no charges. Set
 With `SENTINEL_DEMO_AUTH=1` the login page offers four one-click personas
 (normal in es-MX, ambiguous in pt-BR on the Mexican account, high amount in
 es-CO, "not me" in es-AR) under a banner stating the data is simulated:
-`POST /api/v1/auth/demo/{persona}`. Without the flag the route answers 404 and
-the user-and-password form is the only entry. The public link sets
-`SENTINEL_DEMO_PERSONAS=0`, so the one-click entry answers 404 and a demo user
-uses the credentials of the submission email.
+`POST /api/v1/auth/demo/{persona}`. With the flag off, the route answers 404
+and the user-and-password form is the only entry.
 
 Limitation: a persona id alone proves nothing about identity. One-click
 sign-in is a demo shortcut for demo users, never an authentication method;

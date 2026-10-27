@@ -53,7 +53,7 @@ This page is the catalog of the system metrics.
 
 [ROI](roi.md) holds the real projection. It is a break-even over measured inputs and an assumed advisor hour. It is never a measured saving. The example below stays illustrative.
 
-> **ILLUSTRATIVE EXAMPLE. Do not use for decisions or quote in the presentation.** The values (USD 0.05 and USD 2) are invented to explain the calculation. The real values come from our measurements and documented assumptions.
+> **ILLUSTRATIVE EXAMPLE. Do not use for decisions or quote as evidence.** The values (USD 0.05 and USD 2) are invented to explain the calculation. The real values come from our measurements and documented assumptions.
 
 Illustrative assumptions: AI costs USD 0.05 per attempted case. Safe resolution is 40%. A human costs USD 2 per case.
 

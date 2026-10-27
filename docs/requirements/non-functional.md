@@ -231,4 +231,4 @@ Explain the trade-offs between autonomy, accuracy, latency, cost and human overs
 
 **Evidence:** Proven by the [decisions](../build/decisions/).
 
-Missing: the argument with the final metrics, in the presentation.
+Missing: the argument with the final metrics, in the rationale pages.

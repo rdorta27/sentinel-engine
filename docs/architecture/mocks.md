@@ -26,7 +26,7 @@ The brief does not ask for zero mocks. It asks that each mock has a documented c
 | Mock | Where it runs | Why it is a mock | Limit | Production |
 |---|---|---|---|---|
 | Gold on the public link | Public link | The image holds no dataset rows. See [Gold on the public link](#gold-on-the-public-link) | The demo personas and their charges are team-generated. `GET /api/v1/health` reports `gold_source: mock` | Gold on Databricks |
-| Login and session | Local run and public link | The team has no bank identity provider | Test users with a password fixture. The public link reads a test users file (hashes only) and sends the credentials in the submission email; the fixture passwords do not work there. They prove the session design, not a real identity check | The bank identity provider |
+| Login and session | Local run | The team has no bank identity provider | Test users with a password fixture. They prove the session design, not a real identity check | The bank identity provider |
 | Advisor | Local run and public link | No human advisor team exists | A demo advisor user with a read-only ticket view | A human advisor. Tickets go to the bank CRM through a queue ([015](../build/decisions/015-handoff-delivery.md)) |
 | Case store | Local run and public link | PostgreSQL adds setup risk and no evidence | SQLite with the same models, on an Azure Files share on the public link | PostgreSQL |
 | Dispute policy | Local run and public link | The bank policy is not available | Team-written country files, marked `synthetic: true` ([021](../build/decisions/021-dispute-policy-sources.md)) | The policy that the bank approves |
