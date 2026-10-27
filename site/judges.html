@@ -29,7 +29,7 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
 <div class="wrap">
   <!--site:header--><header class="top">
     <a class="logo" href="index.html"><img src="favicon.svg" width="34" height="34" alt="">Sentinel</a>
-    <nav aria-label="Main"><a href="index.html">Home</a><a href="diagrams/architecture.html">Architecture</a><a href="diagrams/turn.html">One turn</a><a href="diagrams/cases.html">Cases</a><a href="diagrams/evidence.html">Evidence</a><a href="judges.html" aria-current="page">For judges</a><a href="slides/deck.html">Slides</a><a class="cta" href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">GitHub</a></nav>
+    <nav aria-label="Main"><a href="index.html">Home</a><a href="diagrams/architecture.html">Architecture</a><a href="diagrams/turn.html">One turn</a><a href="diagrams/cases.html">Cases</a><a href="diagrams/evidence.html">Evidence</a><a href="judges.html" aria-current="page">For judges</a><a href="slides/deck.html">Slides</a><a class="cta" href="https://github.com/rdorta27/sentinel-engine">GitHub</a></nav>
     <div class="lang" role="group" aria-label="Language" data-t="keep"><a lang="en" hreflang="en" data-lang="en" aria-current="true" href="judges.html" title="English (United States)">English (US)</a><a lang="es-419" hreflang="es-419" data-lang="es-419" href="es-419/judges.html" title="Español (Latinoamérica)">Español (LA)</a><a lang="pt-BR" hreflang="pt-BR" data-lang="pt-br" href="pt-br/judges.html" title="Português (Brasil)">Português (BR)</a></div>
   </header><!--/site:header-->
   <main id="main">
@@ -44,7 +44,7 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
 
     <section id="production" aria-labelledby="production-h">
       <h2 id="production-h">Path to production</h2>
-      <p class="note">The demo runs the same code as production. This table lists only what must change. Each row links to its page. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/specification.md#path-to-production">Full table</a>.</p>
+      <p class="note">The demo runs the same code as production. This table lists only what must change. Each row links to its page. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/specification.md#path-to-production">Full table</a>.</p>
       <div class="tablewrap" tabindex="0" aria-label="Path to production table">
       <table>
         <thead><tr><th>Area</th><th>Today</th><th>Before production</th></tr></thead>
@@ -55,9 +55,9 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
           <tr><td>Policy</td><td>Synthetic values, labelled</td><td>The approved policy of the bank, in the same format.</td></tr>
           <tr><td>Handoff</td><td>One demo advisor view</td><td>A queue that creates the ticket in the CRM of the bank, routed by language and specialty.</td></tr>
           <tr><td>LLM</td><td>GLM 5.3 Flash on Fireworks AI</td><td>The same weights on Azure AI Foundry or Databricks, with quotas and a spend cap.</td></tr>
-          <tr><td>Capacity</td><td>No load test of the chat endpoint</td><td>A load test as a release gate. See <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/sizing-capacity.md">sizing</a>.</td></tr>
+          <tr><td>Capacity</td><td>No load test of the chat endpoint</td><td>A load test as a release gate. See <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/sizing-capacity.md">sizing</a>.</td></tr>
           <tr><td>Monitoring</td><td>Turn records. A replayed workload, grouped by country and language.</td><td>Central traces and alerts for each country.</td></tr>
-          <tr><td>Cost</td><td>An estimate for the deployment</td><td>See <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/cost.md">cost</a>. It is a projection, not a measurement.</td></tr>
+          <tr><td>Cost</td><td>An estimate for the deployment</td><td>See <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/cost.md">cost</a>. It is a projection, not a measurement.</td></tr>
         </tbody>
       </table>
       </div>
@@ -66,14 +66,14 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
     <section id="reproduce" aria-labelledby="reproduce-h">
       <h2 id="reproduce-h">Reproduce</h2>
       <p>Clone the repository, run the tests and replay a frozen run offline. No model key, no cloud credential and no data are needed.</p>
-<pre><code>git clone https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine.git
-cd factored-hackathon-2026-sentinel-engine/sentinel-ai-core
+<pre><code>git clone https://github.com/rdorta27/sentinel-engine.git
+cd sentinel-engine/sentinel-ai-core
 pip install -e ".[dev,eval]"
 SENTINEL_WRITE_EVIDENCE=0 python3 -m pytest -q
 export SENTINEL_LLM_CHEAP_MODEL=accounts/fireworks/models/glm-5p3-flash
 export SENTINEL_LLM_STRONG_MODEL=accounts/fireworks/models/glm-5p3-flash
 python3 -m eval.run verify 2024Q4-train-v1</code></pre>
-      <p class="note">The two model names are public. They are not keys. The <code>verify</code> command makes no live call. It recomputes a frozen run from its recordings and compares it with its <code>summary.json</code>. Today <code>2024Q4-train-v1</code> matches. The runs <code>2024Q4-resolution-v1</code> and <code>2024Q4-resolution-v2</code> differ from a replay of the current code, because the code changed after they were measured. A frozen run is never edited: a new measurement is a new run. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/evidence/README.md#evaluation-runs">Evidence index</a>.</p>
+      <p class="note">The two model names are public. They are not keys. The <code>verify</code> command makes no live call. It recomputes a frozen run from its recordings and compares it with its <code>summary.json</code>. Today <code>2024Q4-train-v1</code> matches. The runs <code>2024Q4-resolution-v1</code> and <code>2024Q4-resolution-v2</code> differ from a replay of the current code, because the code changed after they were measured. A frozen run is never edited: a new measurement is a new run. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/evidence/README.md#evaluation-runs">Evidence index</a>.</p>
       <p class="note">The attack suite writes a new run only when you ask for it: <code>SENTINEL_WRITE_EVIDENCE=1 python3 -m pytest tests/adversarial -q</code>.</p>
     </section>
 
@@ -87,7 +87,7 @@ python3 -m eval.run verify 2024Q4-train-v1</code></pre>
             <li>Personal identifiers. Code masks them by pattern before any model call.</li>
             <li>The decision. The model labels the intent. The policy engine decides.</li>
           </ul>
-          <p class="note">Limit: the masking finds only the patterns that it knows. It does not find other personal data. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/004-pii-lifecycle.md">Decision 004</a>.</p>
+          <p class="note">Limit: the masking finds only the patterns that it knows. It does not find other personal data. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/004-pii-lifecycle.md">Decision 004</a>.</p>
         </div>
         <div class="card">
           <h3>Every decision has a reason</h3>
@@ -119,13 +119,13 @@ python3 -m eval.run verify 2024Q4-train-v1</code></pre>
         <div class="card"><span class="eyebrow">es-MX</span><span class="big" data-num="lang_es_mx">81.8%</span><p>on <span data-num-den="lang_es_mx">77</span> cases</p></div>
         <div class="card"><span class="eyebrow">pt-BR</span><span class="big" data-num="lang_pt_br">81.8%</span><p>on <span data-num-den="lang_pt_br">77</span> cases</p></div>
       </div>
-      <p class="note">The Portuguese cases are model-written. No native speaker reviewed them. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/018-evaluation-acceptance.md">Decision 018</a>.</p>
+      <p class="note">The Portuguese cases are model-written. No native speaker reviewed them. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/018-evaluation-acceptance.md">Decision 018</a>.</p>
     </section>
 
     <section id="questions" aria-labelledby="questions-h">
       <h2 id="questions-h">Questions a judge asks</h2>
       <details><summary>Is it in production?</summary><p>No. It is a prototype. It runs the code that production would run, with documented mocks. No number on this site is a production measurement.</p></details>
-      <details><summary>What is a mock?</summary><p>A stand-in with the same contract as the production part. Production replaces the backend and keeps the code. The <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/mocks.md">mocks page</a> lists each one with its limit. The <a href="diagrams/architecture.html">architecture diagram</a> marks them.</p></details>
+      <details><summary>What is a mock?</summary><p>A stand-in with the same contract as the production part. Production replaces the backend and keeps the code. The <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">mocks page</a> lists each one with its limit. The <a href="diagrams/architecture.html">architecture diagram</a> marks them.</p></details>
       <details><summary>Why is the resolution ceiling <span data-num="ceil_resolvable">16</span> of <span data-num-den="ceil_resolvable">56</span>?</summary><p>The policy lets only those simulated cases resolve. The other cases must end in a handoff or a question. Both the baseline and the LLM router resolve every case under the ceiling. The set cannot tell them apart on resolution.</p></details>
       <details><summary>Then what does the LLM router add?</summary><p>It labels the intent better: <span data-num="intent_router">81.8%</span> against <span data-num="intent_baseline">69.2%</span> for the keyword baseline on <span data-num-den="intent_router">308</span> held-out turns. That is a simulation on team-written cases.</p></details>
       <details><summary>Does the model decide?</summary><p>No. The model labels the intent. Code masks, looks up, decides, acts and reads the case back.</p></details>
@@ -135,8 +135,8 @@ python3 -m eval.run verify 2024Q4-train-v1</code></pre>
     <a href="index.html">Home</a>
     <a href="diagrams/architecture.html">Architecture</a>
     <a href="diagrams/evidence.html">Evidence</a>
-    <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/requirements/requirements.md">Requirements</a>
-    <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">Repository</a>
+    <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/requirements/requirements.md">Requirements</a>
+    <a href="https://github.com/rdorta27/sentinel-engine">Repository</a>
     <span class="grow">Synthetic demo data. No credentials and no real data in the repository.</span>
   </footer><!--/site:footer-->
 </div>

@@ -339,7 +339,7 @@ def test_judges_page_commands_and_links_exist():
     assert "dev = [" in extras and "eval = [" in extras
     assert (sn.ROOT / "sentinel-ai-core/tests/adversarial").is_dir()
     # Every repository link of the page points to a file that exists.
-    base = "https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/"
+    base = "https://github.com/rdorta27/sentinel-engine/blob/main/"
     for rel in re.findall(re.escape(base) + r"([^\"#]+)", html):
         assert (sn.ROOT / rel).exists(), rel
 

@@ -87,7 +87,7 @@ Product and technical decisions go in [decisions](../docs/build/decisions/), one
 | Code | One branch for each change. Push. Ask in Slack for authorization to merge. Any other teammate can authorize. The author merges. No direct push to `main` |
 | Decisions | Product and technical decisions are in [decisions](../docs/build/decisions/). Team decisions are here. We announce all of them in the channel |
 | Progress | When a task closes, we update the card of the requirement in its type file and its row in the [requirements index](../docs/requirements/requirements.md). [Tasks](tasks.md#open-work-by-priority) orders the open tasks by priority |
-| Repository | A single repository (`factored-hackathon-2026-sentinel-engine`). It is public from the start and it stays public |
+| Repository | A single repository (`sentinel-engine`). It is public from the start and it stays public |
 
 Two hackathon rules are non-negotiable. No secrets or data in the repository (credentials go in `.env` and teammates share them by direct message). The submission is in English.
 

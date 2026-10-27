@@ -79,7 +79,7 @@ Missing: the same limits on the slides.
 <a id="req-0034"></a>
 ### REQ-0034 · Clean public repository
 
-The team delivers the repository as public, with the name `factored-hackathon-2026-sentinel-engine`. All links go to `hackathon.admin@factored.ai`. For this reason, the repository must hold no secrets, no private records and no restricted data.
+The team delivers the repository as public, with the name `sentinel-engine`. All links go to `hackathon.admin@factored.ai`. For this reason, the repository must hold no secrets, no private records and no restricted data.
 
 **Priority:** P0 · **Status:** Done · **Criterion:** Rationale · **Area:** all
 

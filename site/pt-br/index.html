@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sentinel Engine: a IA conversa. As regras decidem.">
 <meta property="og:description" content="Uma camada de confiança para a IA de atendimento ao cliente de um banco. Transforma uma cobrança não reconhecida em um caso verificado, ou em um atendente bem informado.">
-<meta property="og:image" content="https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/preview.png">
+<meta property="og:image" content="https://rdorta27.github.io/sentinel-engine/preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css">
@@ -20,7 +20,7 @@
 <div class="wrap">
   <!--site:header--><header class="top">
     <a class="logo" href="index.html"><img src="../favicon.svg" width="34" height="34" alt="">Sentinel</a>
-    <nav aria-label="Principal"><a href="index.html" aria-current="page">Início</a><a href="diagrams/architecture.html">Arquitetura</a><a href="diagrams/turn.html">Um turno</a><a href="diagrams/cases.html">Casos</a><a href="diagrams/evidence.html">Evidências</a><a href="judges.html">Para o júri</a><a href="slides/deck.html">Slides</a><a class="cta" href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">GitHub</a></nav>
+    <nav aria-label="Principal"><a href="index.html" aria-current="page">Início</a><a href="diagrams/architecture.html">Arquitetura</a><a href="diagrams/turn.html">Um turno</a><a href="diagrams/cases.html">Casos</a><a href="diagrams/evidence.html">Evidências</a><a href="judges.html">Para o júri</a><a href="slides/deck.html">Slides</a><a class="cta" href="https://github.com/rdorta27/sentinel-engine">GitHub</a></nav>
     <div class="lang" role="group" aria-label="Idioma" data-t="keep"><a lang="en" hreflang="en" data-lang="en" href="../index.html" title="English (United States)">English (US)</a><a lang="es-419" hreflang="es-419" data-lang="es-419" href="../es-419/index.html" title="Español (Latinoamérica)">Español (LA)</a><a lang="pt-BR" hreflang="pt-BR" data-lang="pt-br" aria-current="true" href="index.html" title="Português (Brasil)">Português (BR)</a></div>
   </header><!--/site:header-->
 
@@ -81,7 +81,7 @@
 
     <section id="proof" aria-labelledby="proof-h">
       <h2 id="proof-h">Resultados, com seu tipo</h2>
-      <p class="note">Cada número vem de um <code>summary.json</code> congelado por meio de <code>site/numbers.json</code>. O rótulo diz que tipo de número é. Uma simulação não é uma medição de produção. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/what-is-real.md">O que é real</a>.</p>
+      <p class="note">Cada número vem de um <code>summary.json</code> congelado por meio de <code>site/numbers.json</code>. O rótulo diz que tipo de número é. Uma simulação não é uma medição de produção. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/what-is-real.md">O que é real</a>.</p>
       <div class="grid">
         <div class="card">
           <span class="tag test" data-num-type="adv_attempted">Suíte de testes</span>
@@ -131,9 +131,9 @@
         <div class="card"><span class="eyebrow">Valor alto</span><p>O sistema não age sozinho. Transfere com os fatos verificados.</p></div>
         <div class="card"><span class="eyebrow">Não fui eu</span><p>O sistema não decide sobre fraude. Transfere para um atendente.</p></div>
       </div>
-      <p class="note"><strong>Casos.</strong> A demo ao vivo foi retirada. Os quatro casos e as linhas da demo continuam no <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/sentinel-ai-core/eval/demo/replay.md">replay da demo</a>.</p>
+      <p class="note"><strong>Casos.</strong> A demo ao vivo foi retirada. Os quatro casos e as linhas da demo continuam no <a href="https://github.com/rdorta27/sentinel-engine/blob/main/sentinel-ai-core/eval/demo/replay.md">replay da demo</a>.</p>
       <div class="row">
-        <a class="btn alt" href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">Repositório</a>
+        <a class="btn alt" href="https://github.com/rdorta27/sentinel-engine">Repositório</a>
       </div>
     </section>
     <section id="screens" aria-labelledby="screens-h">
@@ -155,7 +155,7 @@
           <ul>
             <li><b>Dados:</b> sintéticos, só em espanhol, de três países. Os casos em português foram escritos por um modelo.</li>
             <li><b>Teto:</b> a política permite resolver <span data-num="ceil_resolvable">16</span> de <span data-num-den="ceil_resolvable">56</span> casos simulados (<span data-num-type="ceil_resolvable">Simulação</span>). O sistema resolve todos eles e nenhum outro.</li>
-            <li><b>Mocks:</b> o armazém Gold, o login e a sessão, o atendente, o armazém de casos e os valores da política. Cada um mantém o contrato de produção. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/mocks.md">Mocks</a>.</li>
+            <li><b>Mocks:</b> o armazém Gold, o login e a sessão, o atendente, o armazém de casos e os valores da política. Cada um mantém o contrato de produção. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">Mocks</a>.</li>
             <li><b>Traduções:</b> as páginas em espanhol e português são traduções das páginas em inglês feitas por um modelo. Nenhum falante nativo as revisou.</li>
             <li><b>Números:</b> nenhum é uma medição de produção.</li>
           </ul>
@@ -170,7 +170,7 @@
             <li><b>Consulta de políticas:</b> precisa dos documentos de política do banco.</li>
             <li><b>Roteamento de transferências:</b> por idioma e especialidade.</li>
           </ul>
-          <p class="note">Cada item tem sua evidência no <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/README.md#roadmap">roteiro do README</a>.</p>
+          <p class="note">Cada item tem sua evidência no <a href="https://github.com/rdorta27/sentinel-engine/blob/main/README.md#roadmap">roteiro do README</a>.</p>
         </div>
       </div>
     </section>
@@ -185,7 +185,7 @@
   </main>
 
   <!--site:footer--><footer>
-    <a href="index.html">Início</a> <a href="diagrams/architecture.html">Arquitetura</a> <a href="diagrams/evidence.html">Evidências</a> <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/requirements/requirements.md">Requisitos</a> <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">Repositório</a> <span class="grow">Dados de demonstração sintéticos. Sem credenciais nem dados reais no repositório.</span>
+    <a href="index.html">Início</a> <a href="diagrams/architecture.html">Arquitetura</a> <a href="diagrams/evidence.html">Evidências</a> <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/requirements/requirements.md">Requisitos</a> <a href="https://github.com/rdorta27/sentinel-engine">Repositório</a> <span class="grow">Dados de demonstração sintéticos. Sem credenciais nem dados reais no repositório.</span>
   </footer><!--/site:footer-->
 </div>
 </body>

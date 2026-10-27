@@ -72,7 +72,7 @@ The static site is in `site/`. It has plain HTML and CSS and no build step. The 
 | Numbers | `python3 scripts/site_numbers.py` writes `site/numbers.json` and the number slots of each page from the frozen `summary.json` runs |
 | Check | `python3 scripts/site_numbers.py --check` and `python3 -m pytest scripts/test_site.py -q` fail when a number differs from the evidence |
 | Rebuild the copies | After a change to the English text or to `site/numbers.json`, run `python3 scripts/site_numbers.py`, then `python3 scripts/localize.py`, then `python3 scripts/export_slides.py`. Run `python3 scripts/localize.py --check` to find a stale copy |
-| Link for the judges | Use `https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/?lang=en`. It opens in English for each browser language. The browser keeps the choice. Without `?lang`, the first visit follows the browser language |
+| Link for the judges | Use `https://rdorta27.github.io/sentinel-engine/?lang=en`. It opens in English for each browser language. The browser keeps the choice. Without `?lang`, the first visit follows the browser language |
 | Owner action | Open Settings, Pages. Set Source to GitHub Actions. Run the `pages` workflow once |
 | Status | We wrote the site and the workflow. The first green run waits for the owner action |
 
@@ -108,13 +108,13 @@ Each row has one owner and one proof. A row stays pending until its proof exists
 |---|---|---|---|
 | Repository | Rubén | The public repository and its [README](../../README.md) | Done |
 | Deployed link | Rubén | The `GET /api/v1/health` response of the 2026-10-05 redeploy, with `bundle_hash` `2efe5962…` | Done |
-| Project site | Rubén | The [Pages workflow](../../.github/workflows/pages.yml) and a green `pages` run. The site answers 200 at https://rdorta27.github.io/factored-hackathon-2026-sentinel-engine/ | Done |
+| Project site | Rubén | The [Pages workflow](../../.github/workflows/pages.yml). The Pages site of this repository is not active yet | Pending |
 | Slides PDF | Rubén | `python3 scripts/export_slides.py` writes `site/slides/sentinel-slides.pdf` | Pending |
 | Video | Rubén | The video at (retired after the hackathon), 3 minutes at most, in English with the voice of the owner. The `video` change owns this row | Done |
 | Tags and release | Rubén | The `git tag` and `gh release create` commands in [release notes](#release-notes). The `video` change owns this row | Pending |
 | Submission email | Rubén | The email to `hackathon.admin@factored.ai`, with the [credentials block](#credentials). The `video` change owns this row | Pending |
 | Credentials block | Rubén | The [credentials](#credentials) table, with no real password | Done |
-| GitHub Pages | Rubén | Settings, Pages, Source is GitHub Actions. Active and deployed on 2026-10-05 | Done |
+| GitHub Pages | Rubén | Settings, Pages, Source is GitHub Actions. Not active on this repository yet | Pending |
 | Secret scan | Rubén | The `scan` job in CI | Done |
 | Green tests | Rubén | `python3 -m pytest -q` from `sentinel-ai-core/` | Done |
 

@@ -16,7 +16,7 @@
 <div class="wrap">
   <!--site:header--><header class="top">
     <a class="logo" href="../index.html"><img src="../../favicon.svg" width="34" height="34" alt="">Sentinel</a>
-    <nav aria-label="Principal"><a href="../index.html">Início</a><a href="architecture.html" aria-current="page">Arquitetura</a><a href="turn.html">Um turno</a><a href="cases.html">Casos</a><a href="evidence.html">Evidências</a><a href="../judges.html">Para o júri</a><a href="../slides/deck.html">Slides</a><a class="cta" href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">GitHub</a></nav>
+    <nav aria-label="Principal"><a href="../index.html">Início</a><a href="architecture.html" aria-current="page">Arquitetura</a><a href="turn.html">Um turno</a><a href="cases.html">Casos</a><a href="evidence.html">Evidências</a><a href="../judges.html">Para o júri</a><a href="../slides/deck.html">Slides</a><a class="cta" href="https://github.com/rdorta27/sentinel-engine">GitHub</a></nav>
     <div class="lang" role="group" aria-label="Idioma" data-t="keep"><a lang="en" hreflang="en" data-lang="en" href="../../diagrams/architecture.html" title="English (United States)">English (US)</a><a lang="es-419" hreflang="es-419" data-lang="es-419" href="../../es-419/diagrams/architecture.html" title="Español (Latinoamérica)">Español (LA)</a><a lang="pt-BR" hreflang="pt-BR" data-lang="pt-br" aria-current="true" href="architecture.html" title="Português (Brasil)">Português (BR)</a></div>
   </header><!--/site:header-->
   <main id="main">
@@ -224,21 +224,21 @@ svg.arch .swatch{stroke-width:1.5;fill:var(--card)}
 <p class="chips"><span class="tag test">Real</span> <span class="tag data">O código decide</span></p>
 <p>Mostra o chat e a lista de cobranças. Chama POST /api/v1/chat. O banco define o nome e a cor de destaque.</p>
 <dl><dt>Na demo</dt><dd>Uma página estática servida pelo processo FastAPI. Ela pega a marca da configuração.</dd><dt>Em produção</dt><dd>A mesma página, com a marca do banco.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/006-frontend.md">docs/build/decisions/006-frontend.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-ai-core/app/static">sentinel-ai-core/app/static</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/006-frontend.md">docs/build/decisions/006-frontend.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-ai-core/app/static">sentinel-ai-core/app/static</a></p>
 </article>
 <article class="detail" id="d-session" data-for="session">
 <h3>Login e sessão</h3>
 <p class="chips"><span class="tag ">Mock</span> <span class="tag data">O código decide</span></p>
 <p>Comprova quem é o cliente. Cada chamada a uma ferramenta está vinculada a esta sessão. O modelo nunca vê o id do cliente.</p>
 <dl><dt>Na demo</dt><dd>Usuários de teste com um login de teste fixo. Provam o desenho da sessão, não uma verificação de identidade real.</dd><dt>Em produção</dt><dd>O provedor de identidade do banco.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/mocks.md">docs/architecture/mocks.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-ai-core/app/session">sentinel-ai-core/app/session</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">docs/architecture/mocks.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-ai-core/app/session">sentinel-ai-core/app/session</a></p>
 </article>
 <article class="detail" id="d-mask" data-for="mask">
 <h3>Mascaramento</h3>
 <p class="chips"><span class="tag test">Real</span> <span class="tag data">O código decide</span></p>
 <p>Mascara os identificadores pessoais do texto do cliente antes de qualquer chamada ao modelo.</p>
 <dl><dt>Na demo</dt><dd>O código de produção em app/privacy.</dd><dt>Em produção</dt><dd>O mesmo código.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/004-pii-lifecycle.md">docs/build/decisions/004-pii-lifecycle.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-ai-core/app/privacy">sentinel-ai-core/app/privacy</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/004-pii-lifecycle.md">docs/build/decisions/004-pii-lifecycle.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-ai-core/app/privacy">sentinel-ai-core/app/privacy</a></p>
 </article>
 <article class="detail" id="d-router" data-for="router">
 <h3>Orquestrador + router</h3>
@@ -247,14 +247,14 @@ svg.arch .swatch{stroke-width:1.5;fill:var(--card)}
 <dl><dt>Na demo</dt><dd>GLM 5.3 Flash no Fireworks AI com chamadas reais. A linha de base de palavras-chave é o reserva de cada turno.</dd><dt>Em produção</dt><dd>Os mesmos pesos no Azure AI Foundry ou no Databricks.</dd></dl>
 <p class="metric"><span class="tag" data-num-type="intent_router">Simulação</span> <strong data-num="intent_router">81,8%</strong> de <span data-num-den="intent_router">308</span> de acurácia de intenção do roteador LLM. <span class="src">evidence/evaluation-runs/2024Q4-eval-v8/summary.json · candidates.router_v2.intent.accuracy</span></p>
 <p class="metric"><span class="tag" data-num-type="intent_baseline">Simulação</span> <strong data-num="intent_baseline">69,2%</strong> de <span data-num-den="intent_baseline">308</span> de acurácia de intenção da linha de base de palavras-chave. <span class="src">evidence/evaluation-runs/2024Q4-eval-v8/summary.json · candidates.baseline.intent.accuracy</span></p>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/016-router-models.md">docs/build/decisions/016-router-models.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/evidence/evaluation-runs/2024Q4-eval-v8/summary.json">evidence/evaluation-runs/2024Q4-eval-v8/summary.json</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-ai-core/app/ai">sentinel-ai-core/app/ai</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/016-router-models.md">docs/build/decisions/016-router-models.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/blob/main/evidence/evaluation-runs/2024Q4-eval-v8/summary.json">evidence/evaluation-runs/2024Q4-eval-v8/summary.json</a> · <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-ai-core/app/ai">sentinel-ai-core/app/ai</a></p>
 </article>
 <article class="detail" id="d-logs" data-for="logs">
 <h3>Registros e logs</h3>
 <p class="chips"><span class="tag test">Real</span> <span class="tag data">O código decide</span></p>
 <p>Grava um registro para cada turno, encadeado para que qualquer mudança apareça.</p>
 <dl><dt>Na demo</dt><dd>Linhas JSON para o Log Analytics no link público.</dd><dt>Em produção</dt><dd>Os mesmos registros.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-ai-core/app/observability">sentinel-ai-core/app/observability</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-ai-core/app/observability">sentinel-ai-core/app/observability</a></p>
 </article>
 <article class="detail" id="d-policy" data-for="policy">
 <h3>Motor de políticas</h3>
@@ -263,55 +263,55 @@ svg.arch .swatch{stroke-width:1.5;fill:var(--card)}
 <dl><dt>Na demo</dt><dd>O código de produção. Os valores das regras (prazo, limites de fraude e de valor) foram escritos pela equipe e estão identificados como sintéticos.</dd><dt>Em produção</dt><dd>O mesmo código com a política que o banco aprovar.</dd></dl>
 <p class="metric"><span class="tag" data-num-type="adv_rate">Suíte de testes</span> <strong data-num="adv_rate">0/42</strong> ataques com resultado inseguro. <span class="src">evidence/adversarial/20261005T014816Z/summary.json · totals.unsafe_outcome_rate</span></p>
 <p class="metric"><span class="tag" data-num-type="adv_blocked">Suíte de testes</span> <strong data-num="adv_blocked">38</strong> de <span data-num-den="adv_blocked">42</span> bloqueados pelo código de produção. <span class="src">evidence/adversarial/20261005T014816Z/summary.json · totals.blocked_verified</span></p>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/021-dispute-policy-sources.md">docs/build/decisions/021-dispute-policy-sources.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/evidence/adversarial/20261005T014816Z/summary.json">evidence/adversarial/20261005T014816Z/summary.json</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-ai-core/app/policy">sentinel-ai-core/app/policy</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/021-dispute-policy-sources.md">docs/build/decisions/021-dispute-policy-sources.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/blob/main/evidence/adversarial/20261005T014816Z/summary.json">evidence/adversarial/20261005T014816Z/summary.json</a> · <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-ai-core/app/policy">sentinel-ai-core/app/policy</a></p>
 </article>
 <article class="detail" id="d-confirm" data-for="confirm">
 <h3>Confirmar + reler</h3>
 <p class="chips"><span class="tag test">Real</span> <span class="tag data">O código decide</span></p>
 <p>Pede ao cliente que confirme a cobrança. Depois da ação, relê o caso do armazém e só o diz quando o caso existe.</p>
 <dl><dt>Na demo</dt><dd>O código de produção.</dd><dt>Em produção</dt><dd>O mesmo código.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/specification.md">docs/architecture/specification.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-ai-core/app/orchestrator">sentinel-ai-core/app/orchestrator</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/specification.md">docs/architecture/specification.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-ai-core/app/orchestrator">sentinel-ai-core/app/orchestrator</a></p>
 </article>
 <article class="detail" id="d-tools" data-for="tools">
 <h3>Ferramentas de sessão</h3>
 <p class="chips"><span class="tag test">Real</span> <span class="tag data">O código decide</span></p>
 <p>Lê cobranças e abre uma disputa só para a conta da sessão. Nenhuma ferramenta recebe um id de cliente do modelo.</p>
 <dl><dt>Na demo</dt><dd>O código de produção. Ele lê o mock do Gold no link público.</dd><dt>Em produção</dt><dd>O mesmo código, sobre o Gold real.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-ai-core/app/tools">sentinel-ai-core/app/tools</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-ai-core/app/tools">sentinel-ai-core/app/tools</a></p>
 </article>
 <article class="detail" id="d-advisor" data-for="advisor">
 <h3>Visão do atendente</h3>
 <p class="chips"><span class="tag ">Mock</span> <span class="tag data">Uma pessoa decide</span></p>
 <p>Mostra o pacote da transferência: o pedido, os fatos verificados, as ações que o sistema tentou e o rastro de cada passo.</p>
 <dl><dt>Na demo</dt><dd>Um usuário atendente de demonstração com uma visão de tickets somente leitura.</dd><dt>Em produção</dt><dd>Um atendente humano. Os tickets chegam ao CRM do banco por uma fila.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/015-handoff-delivery.md">docs/build/decisions/015-handoff-delivery.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/mocks.md">docs/architecture/mocks.md</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/015-handoff-delivery.md">docs/build/decisions/015-handoff-delivery.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">docs/architecture/mocks.md</a></p>
 </article>
 <article class="detail" id="d-cases" data-for="cases">
 <h3>Armazém de casos</h3>
 <p class="chips"><span class="tag ">Mock</span> <span class="tag data">O código decide</span></p>
 <p>Guarda sessões, estado da conversa, casos de disputa e tickets de transferência. Uma reinicialização os mantém.</p>
 <dl><dt>Na demo</dt><dd>SQLite, com os mesmos modelos. Registra o caso. Nenhum sistema do banco o recebe.</dd><dt>Em produção</dt><dd>PostgreSQL, e o sistema de disputas do banco.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/mocks.md">docs/architecture/mocks.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/sentinel-ai-core/app/models/dispute_case.py">sentinel-ai-core/app/models/dispute_case.py</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">docs/architecture/mocks.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/blob/main/sentinel-ai-core/app/models/dispute_case.py">sentinel-ai-core/app/models/dispute_case.py</a></p>
 </article>
 <article class="detail" id="d-gold" data-for="gold">
 <h3>Armazém Gold</h3>
 <p class="chips"><span class="tag ">Mock</span> <span class="tag data">O código decide</span></p>
 <p>Guarda as cobranças de cada cliente, sem identificadores pessoais.</p>
 <dl><dt>Na demo</dt><dd>No link público, um armazém em memória identificado. Em uma execução local, a visão DuckDB sem dados pessoais com dados sintéticos.</dd><dt>Em produção</dt><dd>Gold no Databricks.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/mocks.md">docs/architecture/mocks.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/023-pii-gold-handling.md">docs/build/decisions/023-pii-gold-handling.md</a> · <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/sentinel-ai-core/app/tools/gold.py">sentinel-ai-core/app/tools/gold.py</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">docs/architecture/mocks.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/023-pii-gold-handling.md">docs/build/decisions/023-pii-gold-handling.md</a> · <a href="https://github.com/rdorta27/sentinel-engine/blob/main/sentinel-ai-core/app/tools/gold.py">sentinel-ai-core/app/tools/gold.py</a></p>
 </article>
 <article class="detail" id="d-pipeline" data-for="pipeline">
 <h3>Bronze, Silver, Gold</h3>
 <p class="chips"><span class="tag test">Real</span> <span class="tag data">O código decide</span></p>
 <p>Transforma as tabelas brutas na visão Gold sem dados pessoais.</p>
 <dl><dt>Na demo</dt><dd>Código real executado localmente no DuckDB. Os dados são o conjunto sintético.</dd><dt>Em produção</dt><dd>O mesmo pacote no Azure Databricks.</dd></dl>
-<p>Evidências: <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/tree/main/sentinel-data-engine">sentinel-data-engine</a></p>
+<p>Evidências: <a href="https://github.com/rdorta27/sentinel-engine/tree/main/sentinel-data-engine">sentinel-data-engine</a></p>
 </article>
     </section>
-    <p class="note">Os rótulos seguem <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/what-is-real.md">o que é real</a> e <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/mocks.md">mocks</a>. Nenhum número desta página é uma medição de produção. <a href="architecture.svg">Desenho estático (SVG)</a>.</p>
+    <p class="note">Os rótulos seguem <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/what-is-real.md">o que é real</a> e <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">mocks</a>. Nenhum número desta página é uma medição de produção. <a href="architecture.svg">Desenho estático (SVG)</a>.</p>
   </main>
   <!--site:footer--><footer>
-    <a href="../index.html">Início</a> <a href="architecture.html">Arquitetura</a> <a href="evidence.html">Evidências</a> <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/requirements/requirements.md">Requisitos</a> <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">Repositório</a> <span class="grow">Dados de demonstração sintéticos. Sem credenciais nem dados reais no repositório.</span>
+    <a href="../index.html">Início</a> <a href="architecture.html">Arquitetura</a> <a href="evidence.html">Evidências</a> <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/requirements/requirements.md">Requisitos</a> <a href="https://github.com/rdorta27/sentinel-engine">Repositório</a> <span class="grow">Dados de demonstração sintéticos. Sem credenciais nem dados reais no repositório.</span>
   </footer><!--/site:footer-->
 </div>
 <script src="../../diagrams/architecture.js"></script>

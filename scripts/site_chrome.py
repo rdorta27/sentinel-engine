@@ -11,7 +11,7 @@ from __future__ import annotations
 import posixpath
 import re
 
-REPO = "https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine"
+REPO = "https://github.com/rdorta27/sentinel-engine"
 
 # (directory, label, name in its own language, value of the html lang attribute)
 LANGS = [

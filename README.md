@@ -98,7 +98,7 @@ The [metrics report](docs/build/metrics-report.md) gives the intervals, the brea
 | You want to know | Go to |
 |---|---|
 | What the original brief asks and how it is scored | [The brief](docs/overview.md) |
-| What the product does for a bank | [Product](docs/product.md) · [Project site](site/) |
+| What the product does for a bank | [Product](docs/product.md) · [Project site](https://rdorta27.github.io/sentinel-engine) |
 | Which parts are real and which are mocks | [What is real](docs/architecture/what-is-real.md) · [Mocks](docs/architecture/mocks.md) |
 | Why we chose transaction disputes | [Flow selection](docs/build/flows/03-flow-selection.md) |
 | Why each main choice, with its evidence | [Rationale](docs/rationale/README.md) · [Decisions](docs/build/decisions/) |

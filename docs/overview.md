@@ -65,7 +65,7 @@ The challenge is a sprint of 10 days. It starts on 9/25. The submissions close o
 
 We send these items to hackathon.admin@factored.ai:
 
-1. The public repository `factored-hackathon-2026-[team]`
+1. The public repository `sentinel-engine`
 2. The link to the deployed tool
 3. A presentation of 4 to 6 slides
 4. A video of **3 minutes at most**: the demo and the architecture decisions

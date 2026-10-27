@@ -29,7 +29,7 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
 <div class="wrap">
   <!--site:header--><header class="top">
     <a class="logo" href="index.html"><img src="../favicon.svg" width="34" height="34" alt="">Sentinel</a>
-    <nav aria-label="Principal"><a href="index.html">Inicio</a><a href="diagrams/architecture.html">Arquitectura</a><a href="diagrams/turn.html">Un turno</a><a href="diagrams/cases.html">Casos</a><a href="diagrams/evidence.html">Evidencia</a><a href="judges.html" aria-current="page">Para el jurado</a><a href="slides/deck.html">Diapositivas</a><a class="cta" href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">GitHub</a></nav>
+    <nav aria-label="Principal"><a href="index.html">Inicio</a><a href="diagrams/architecture.html">Arquitectura</a><a href="diagrams/turn.html">Un turno</a><a href="diagrams/cases.html">Casos</a><a href="diagrams/evidence.html">Evidencia</a><a href="judges.html" aria-current="page">Para el jurado</a><a href="slides/deck.html">Diapositivas</a><a class="cta" href="https://github.com/rdorta27/sentinel-engine">GitHub</a></nav>
     <div class="lang" role="group" aria-label="Idioma" data-t="keep"><a lang="en" hreflang="en" data-lang="en" href="../judges.html" title="English (United States)">English (US)</a><a lang="es-419" hreflang="es-419" data-lang="es-419" aria-current="true" href="judges.html" title="Español (Latinoamérica)">Español (LA)</a><a lang="pt-BR" hreflang="pt-BR" data-lang="pt-br" href="../pt-br/judges.html" title="Português (Brasil)">Português (BR)</a></div>
   </header><!--/site:header-->
   <main id="main">
@@ -44,7 +44,7 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
 
     <section id="production" aria-labelledby="production-h">
       <h2 id="production-h">Camino a producción</h2>
-      <p class="note">La demo ejecuta el mismo código que producción. Esta tabla lista solo lo que debe cambiar. Cada fila enlaza a su página. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/specification.md#path-to-production">Tabla completa</a>.</p>
+      <p class="note">La demo ejecuta el mismo código que producción. Esta tabla lista solo lo que debe cambiar. Cada fila enlaza a su página. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/specification.md#path-to-production">Tabla completa</a>.</p>
       <div class="tablewrap" tabindex="0" aria-label="Tabla del camino a producción">
       <table>
         <thead><tr><th>Área</th><th>Hoy</th><th>Antes de producción</th></tr></thead>
@@ -55,9 +55,9 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
           <tr><td>Política</td><td>Valores sintéticos, identificados</td><td>La política aprobada del banco, en el mismo formato.</td></tr>
           <tr><td>Traspaso</td><td>Una vista de asesor de demostración</td><td>Una cola que crea el ticket en el CRM del banco, enrutado por idioma y especialidad.</td></tr>
           <tr><td>LLM</td><td>GLM 5.3 Flash en Fireworks AI</td><td>Los mismos pesos en Azure AI Foundry o Databricks, con cuotas y un tope de gasto.</td></tr>
-          <tr><td>Capacidad</td><td>Sin prueba de carga del endpoint del chat</td><td>Una prueba de carga como requisito de lanzamiento. Ver <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/sizing-capacity.md">dimensionamiento</a>.</td></tr>
+          <tr><td>Capacidad</td><td>Sin prueba de carga del endpoint del chat</td><td>Una prueba de carga como requisito de lanzamiento. Ver <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/sizing-capacity.md">dimensionamiento</a>.</td></tr>
           <tr><td>Monitoreo</td><td>Registros de turnos. Una carga repetida, agrupada por país e idioma.</td><td>Trazas centralizadas y alertas para cada país.</td></tr>
-          <tr><td>Costo</td><td>Una estimación del despliegue</td><td>Ver <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/cost.md">costo</a>. Es una proyección, no una medición.</td></tr>
+          <tr><td>Costo</td><td>Una estimación del despliegue</td><td>Ver <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/cost.md">costo</a>. Es una proyección, no una medición.</td></tr>
         </tbody>
       </table>
       </div>
@@ -66,14 +66,14 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
     <section id="reproduce" aria-labelledby="reproduce-h">
       <h2 id="reproduce-h">Reproducir</h2>
       <p>Clona el repositorio, ejecuta las pruebas y repite una corrida congelada sin conexión. No se necesita clave de modelo, credencial de nube ni datos.</p>
-<pre><code>git clone https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine.git
-cd factored-hackathon-2026-sentinel-engine/sentinel-ai-core
+<pre><code>git clone https://github.com/rdorta27/sentinel-engine.git
+cd sentinel-engine/sentinel-ai-core
 pip install -e ".[dev,eval]"
 SENTINEL_WRITE_EVIDENCE=0 python3 -m pytest -q
 export SENTINEL_LLM_CHEAP_MODEL=accounts/fireworks/models/glm-5p3-flash
 export SENTINEL_LLM_STRONG_MODEL=accounts/fireworks/models/glm-5p3-flash
 python3 -m eval.run verify 2024Q4-train-v1</code></pre>
-      <p class="note">Los dos nombres de modelo son públicos. No son claves. El comando <code>verify</code> no hace ninguna llamada real. Recalcula una corrida congelada a partir de sus grabaciones y la compara con su <code>summary.json</code>. Hoy <code>2024Q4-train-v1</code> coincide. Las corridas <code>2024Q4-resolution-v1</code> y <code>2024Q4-resolution-v2</code> difieren de una repetición del código actual, porque el código cambió después de medirlas. Una corrida congelada nunca se edita: una medición nueva es una corrida nueva. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/evidence/README.md#evaluation-runs">Índice de evidencia</a>.</p>
+      <p class="note">Los dos nombres de modelo son públicos. No son claves. El comando <code>verify</code> no hace ninguna llamada real. Recalcula una corrida congelada a partir de sus grabaciones y la compara con su <code>summary.json</code>. Hoy <code>2024Q4-train-v1</code> coincide. Las corridas <code>2024Q4-resolution-v1</code> y <code>2024Q4-resolution-v2</code> difieren de una repetición del código actual, porque el código cambió después de medirlas. Una corrida congelada nunca se edita: una medición nueva es una corrida nueva. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/evidence/README.md#evaluation-runs">Índice de evidencia</a>.</p>
       <p class="note">La suite de ataques escribe una corrida nueva solo cuando lo pides: <code>SENTINEL_WRITE_EVIDENCE=1 python3 -m pytest tests/adversarial -q</code>.</p>
     </section>
 
@@ -87,7 +87,7 @@ python3 -m eval.run verify 2024Q4-train-v1</code></pre>
             <li>Identificadores personales. El código los enmascara por patrón antes de cualquier llamada al modelo.</li>
             <li>La decisión. El modelo etiqueta la intención. Decide el motor de políticas.</li>
           </ul>
-          <p class="note">Límite: el enmascaramiento solo encuentra los patrones que conoce. No encuentra otros datos personales. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/004-pii-lifecycle.md">Decisión 004</a>.</p>
+          <p class="note">Límite: el enmascaramiento solo encuentra los patrones que conoce. No encuentra otros datos personales. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/004-pii-lifecycle.md">Decisión 004</a>.</p>
         </div>
         <div class="card">
           <h3>Cada decisión tiene una razón</h3>
@@ -119,20 +119,20 @@ python3 -m eval.run verify 2024Q4-train-v1</code></pre>
         <div class="card"><span class="eyebrow">es-MX</span><span class="big" data-num="lang_es_mx">81.8%</span><p>en <span data-num-den="lang_es_mx">77</span> casos</p></div>
         <div class="card"><span class="eyebrow">pt-BR</span><span class="big" data-num="lang_pt_br">81.8%</span><p>en <span data-num-den="lang_pt_br">77</span> casos</p></div>
       </div>
-      <p class="note">Los casos en portugués los escribió un modelo. Ningún hablante nativo los revisó. <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/build/decisions/018-evaluation-acceptance.md">Decisión 018</a>.</p>
+      <p class="note">Los casos en portugués los escribió un modelo. Ningún hablante nativo los revisó. <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/build/decisions/018-evaluation-acceptance.md">Decisión 018</a>.</p>
     </section>
 
     <section id="questions" aria-labelledby="questions-h">
       <h2 id="questions-h">Preguntas que hace un jurado</h2>
       <details><summary>¿Está en producción?</summary><p>No. Es un prototipo. Ejecuta el código que ejecutaría producción, con mocks documentados. Ningún número de este sitio es una medición de producción.</p></details>
-      <details><summary>¿Qué es un mock?</summary><p>Un sustituto con el mismo contrato que la pieza de producción. Producción reemplaza el backend y conserva el código. La <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/architecture/mocks.md">página de mocks</a> lista cada uno con su límite. El <a href="diagrams/architecture.html">diagrama de arquitectura</a> los marca.</p></details>
+      <details><summary>¿Qué es un mock?</summary><p>Un sustituto con el mismo contrato que la pieza de producción. Producción reemplaza el backend y conserva el código. La <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">página de mocks</a> lista cada uno con su límite. El <a href="diagrams/architecture.html">diagrama de arquitectura</a> los marca.</p></details>
       <details><summary>¿Por qué el techo de resolución es <span data-num="ceil_resolvable">16</span> de <span data-num-den="ceil_resolvable">56</span>?</summary><p>La política deja resolver solo esos casos simulados. Los demás casos deben terminar en un traspaso o en una pregunta. Tanto la línea base como el enrutador LLM resuelven todos los casos bajo el techo. El conjunto no puede distinguirlos en resolución.</p></details>
       <details><summary>Entonces, ¿qué aporta el enrutador LLM?</summary><p>Etiqueta mejor la intención: <span data-num="intent_router">81.8%</span> frente a <span data-num="intent_baseline">69.2%</span> de la línea base de palabras clave en <span data-num-den="intent_router">308</span> turnos reservados. Es una simulación con casos escritos por el equipo.</p></details>
       <details><summary>¿Decide el modelo?</summary><p>No. El modelo etiqueta la intención. El código enmascara, busca, decide, actúa y vuelve a leer el caso.</p></details>
     </section>
   </main>
   <!--site:footer--><footer>
-    <a href="index.html">Inicio</a> <a href="diagrams/architecture.html">Arquitectura</a> <a href="diagrams/evidence.html">Evidencia</a> <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine/blob/main/docs/requirements/requirements.md">Requisitos</a> <a href="https://github.com/rdorta27/factored-hackathon-2026-sentinel-engine">Repositorio</a> <span class="grow">Datos de demostración sintéticos. Sin credenciales ni datos reales en el repositorio.</span>
+    <a href="index.html">Inicio</a> <a href="diagrams/architecture.html">Arquitectura</a> <a href="diagrams/evidence.html">Evidencia</a> <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/requirements/requirements.md">Requisitos</a> <a href="https://github.com/rdorta27/sentinel-engine">Repositorio</a> <span class="grow">Datos de demostración sintéticos. Sin credenciales ni datos reales en el repositorio.</span>
   </footer><!--/site:footer-->
 </div>
 </body>
