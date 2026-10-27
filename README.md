@@ -51,7 +51,7 @@ The advisor reads the ticket in a read-only view of the same page, with the trac
 
 The guiding principle: **AI understands; code executes and verifies.** The loop is: Understand → Decide → Act → Verify → Escalate. Policy, confirmations and the session are in code. The model never sees the customer identifiers.
 
-![Architecture of Sentinel, demo view. The model labels the intent. The code masks, decides, acts and verifies. Each part is marked real or mock.](site/diagrams/architecture-light.svg)
+![Architecture of Sentinel, demo view. The model labels the intent. The code masks, decides, acts and verifies. Each part is marked real or mock.](https://rdorta27.github.io/sentinel-engine-site/diagrams/architecture-light.svg)
 
 | Layer | What it is |
 |---|---|
@@ -98,7 +98,7 @@ The [metrics report](docs/build/metrics-report.md) gives the intervals, the brea
 | You want to know | Go to |
 |---|---|
 | What the original brief asks and how it is scored | [The brief](docs/overview.md) |
-| What the product does for a bank | [Product](docs/product.md) · [Project site](https://rdorta27.github.io/sentinel-engine) |
+| What the product does for a bank | [Product](docs/product.md) · [Project site](https://rdorta27.github.io/sentinel-engine-site/) |
 | Which parts are real and which are mocks | [What is real](docs/architecture/what-is-real.md) · [Mocks](docs/architecture/mocks.md) |
 | Why we chose transaction disputes | [Flow selection](docs/build/flows/03-flow-selection.md) |
 | Why each main choice, with its evidence | [Rationale](docs/rationale/README.md) · [Decisions](docs/build/decisions/) |
@@ -129,7 +129,7 @@ The [documentation index](docs/README.md) gives the full reading order.
 | [`docs/requirements/`](docs/requirements/requirements.md) | Every requirement, with its status, sources and evidence |
 | [`docs/data/`](docs/data/), [`docs/glossary/`](docs/glossary/) | The dataset, the official data dictionary and the locale vocabulary |
 | **Site** | |
-| [`site/`](site/) | The project site on GitHub Pages, in English, Spanish and Portuguese. The slides (`site/slides/`) and the diagrams (`site/diagrams/`). |
+| [sentinel-engine-site](https://github.com/rdorta27/sentinel-engine-site) | The project site in its own repository, in English, Spanish and Portuguese, published at https://rdorta27.github.io/sentinel-engine-site/. The slides (`site/slides/`) and the diagrams (`site/diagrams/`). |
 | [`branding/`](branding/BRANDING.md) | The brand tokens, the fonts and the chat styles |
 | **Tooling** | |
 | [`scripts/`](scripts/) | Repository scripts: site numbers, diagrams, link checks, slide export and load runs |

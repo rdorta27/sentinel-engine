@@ -26,13 +26,13 @@ We update the table at each review, not at the end. The statuses are Pending, In
 
 ## Presentation
 
-The presentation has six slides in English. They are static HTML pages: [`site/slides/deck.html`](../../site/slides/deck.html) (1280×720). Open the page in a browser. The arrow keys move between slides. The `f` key opens full screen. Each number comes from `site/numbers.json` with its type.
+The presentation has six slides in English. They are static HTML pages: [the deck](https://rdorta27.github.io/sentinel-engine-site/slides/deck.html) (1280×720). Open the page in a browser. The arrow keys move between slides. The `f` key opens full screen. Each number comes from [`numbers.json`](https://github.com/rdorta27/sentinel-engine-site/blob/main/site/numbers.json) with its type.
 
 | # | Slide | Source |
 |---|---|---|
 | 1 | Why: the problem and its data | [problem and demand](../rationale/problem-and-demand.md), [`problem/dev-v1`](../../evidence/problem/dev-v1/summary.json) |
 | 2 | What: the product and the four demo cases | [product](../product.md), [demo replay](../../sentinel-ai-core/eval/demo/replay.md) |
-| 3 | How: "The AI talks. The rules decide." with the architecture drawing | [architecture](../architecture/README.md), [`architecture.json`](../../site/diagrams/architecture.json) |
+| 3 | How: "The AI talks. The rules decide." with the architecture drawing | [architecture](../architecture/README.md), [`architecture.json`](https://github.com/rdorta27/sentinel-engine-site/blob/main/site/diagrams/architecture.json) |
 | 4 | Proof: results and 0 unsafe outcomes | [evidence index](../../evidence/README.md), [metrics](metrics.md) |
 | 5 | For the bank: the case file of the advisor, the controls that a risk team can audit, the white label and the model cost per resolution | [handoff package](../architecture/specification.md), [branding](../../sentinel-ai-core/app/branding.py), [`resolution-v2`](../../evidence/evaluation-runs/2024Q4-resolution-v2/summary.json) |
 | 6 | Limits and roadmap, with the mocks | [mocks](../architecture/mocks.md), [README roadmap](../../README.md#roadmap) |
@@ -43,7 +43,7 @@ Build the PDFs before the submission:
 python3 scripts/export_slides.py
 ```
 
-The command writes `site/slides/sentinel-slides.pdf` (English), `sentinel-slides.es-419.pdf` and `sentinel-slides.pt-br.pdf`. Git ignores them. Each PDF has one page for each slide. Submit the English PDF.
+The command writes the three PDFs into the slides folder of the site repository. Git ignores them. Each PDF has one page for each slide. Submit the English PDF.
 
 - The [rationale](../rationale/README.md) gives the reason for each choice, with a sentence for each slide.
 - Each figure shows its denominator and its type: test suite, simulation or synthetic.
@@ -63,18 +63,18 @@ The video is mandatory. It lasts **3 minutes at most**. It shows the solution wo
 
 ## Project site
 
-The site and the slides exist in English, Spanish (Latin America, `es-419`) and Portuguese (`pt-BR`). English is the source and the submission language ([language](#language)). The other two languages are translations for readers. `python3 scripts/localize.py` builds them from the English pages. `site/i18n/` holds the dictionaries. The ASD-STE100 rule applies to the English text only.
+The site and the slides exist in English, Spanish (Latin America, `es-419`) and Portuguese (`pt-BR`). English is the source and the submission language ([language](#language)). The other two languages are translations for readers. `python3 scripts/localize.py` builds them from the English pages. The site repository holds `site/i18n/` with the dictionaries. The ASD-STE100 rule applies to the English text only.
 
-The static site is in `site/`. It has plain HTML and CSS and no build step. The workflow [`pages.yml`](../../.github/workflows/pages.yml) publishes it to GitHub Pages on each push to `main` that changes `site/`.
+The static site lives in its own repository, [sentinel-engine-site](https://github.com/rdorta27/sentinel-engine-site). It has plain HTML and CSS and no build step. Its workflow publishes it to GitHub Pages on each push to `main` that changes `site/`.
 
 | Item | Detail |
 |---|---|
-| Numbers | `python3 scripts/site_numbers.py` writes `site/numbers.json` and the number slots of each page from the frozen `summary.json` runs |
-| Check | `python3 scripts/site_numbers.py --check` and `python3 -m pytest scripts/test_site.py -q` fail when a number differs from the evidence |
-| Rebuild the copies | After a change to the English text or to `site/numbers.json`, run `python3 scripts/site_numbers.py`, then `python3 scripts/localize.py`, then `python3 scripts/export_slides.py`. Run `python3 scripts/localize.py --check` to find a stale copy |
-| Link for the judges | Use `https://rdorta27.github.io/sentinel-engine/?lang=en`. It opens in English for each browser language. The browser keeps the choice. Without `?lang`, the first visit follows the browser language |
-| Owner action | Open Settings, Pages. Set Source to GitHub Actions. Run the `pages` workflow once |
-| Status | We wrote the site and the workflow. The first green run waits for the owner action |
+| Numbers | `python3 scripts/site_numbers.py` writes `../site/site/numbers.json` and the number slots of each page from the frozen `summary.json` runs |
+| Check | `python3 scripts/site_numbers.py --check` fails when a number differs from the evidence |
+| Rebuild the copies | After a change to the English text or to `numbers.json`, run `python3 scripts/localize.py` and `python3 scripts/export_slides.py` in the site repository. Run `python3 scripts/localize.py --check` to find a stale copy |
+| Link for the judges | Use `https://rdorta27.github.io/sentinel-engine-site/?lang=en`. It opens in English for each browser language. The browser keeps the choice. Without `?lang`, the first visit follows the browser language |
+| Owner action | Done: Settings, Pages uses GitHub Actions, and the `pages` workflow ran green |
+| Status | Published at https://rdorta27.github.io/sentinel-engine-site/ |
 
 ## Submission email
 
@@ -108,13 +108,13 @@ Each row has one owner and one proof. A row stays pending until its proof exists
 |---|---|---|---|
 | Repository | Rubén | The public repository and its [README](../../README.md) | Done |
 | Deployed link | Rubén | The `GET /api/v1/health` response of the 2026-10-05 redeploy, with `bundle_hash` `2efe5962…` | Done |
-| Project site | Rubén | The [Pages workflow](../../.github/workflows/pages.yml). The Pages site of this repository is not active yet | Pending |
-| Slides PDF | Rubén | `python3 scripts/export_slides.py` writes `site/slides/sentinel-slides.pdf` | Pending |
+| Project site | Rubén | The [Pages workflow](https://github.com/rdorta27/sentinel-engine-site/blob/main/.github/workflows/pages.yml). Published at https://rdorta27.github.io/sentinel-engine-site/ | Done |
+| Slides PDF | Rubén | `python3 scripts/export_slides.py` in the site repository writes the three PDFs | Pending |
 | Video | Rubén | The video at (retired after the hackathon), 3 minutes at most, in English with the voice of the owner. The `video` change owns this row | Done |
 | Tags and release | Rubén | The `git tag` and `gh release create` commands in [release notes](#release-notes). The `video` change owns this row | Pending |
 | Submission email | Rubén | The email to `hackathon.admin@factored.ai`, with the [credentials block](#credentials). The `video` change owns this row | Pending |
 | Credentials block | Rubén | The [credentials](#credentials) table, with no real password | Done |
-| GitHub Pages | Rubén | Settings, Pages, Source is GitHub Actions. Not active on this repository yet | Pending |
+| GitHub Pages | Rubén | Published from the site repository with GitHub Actions | Done |
 | Secret scan | Rubén | The `scan` job in CI | Done |
 | Green tests | Rubén | `python3 -m pytest -q` from `sentinel-ai-core/` | Done |
 

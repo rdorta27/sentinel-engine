@@ -72,7 +72,7 @@ Give an honest list of what the prototype lacks before real use: capacity, data,
 - The [what is real](../architecture/what-is-real.md) page.
 - The [investigation data support](../rationale/investigation-data-support.md) page.
 - The README section [roadmap](../../README.md#roadmap). It lists each item that the team did not build, with the evidence for why.
-- Slide 6 of the [presentation](../../site/slides/deck.html): the limits, the mocks and the roadmap.
+- Slide 6 of the [presentation](https://rdorta27.github.io/sentinel-engine-site/slides/deck.html): the limits, the mocks and the roadmap.
 
 Missing: the same limits on the slides.
 
@@ -143,7 +143,7 @@ Write a short slide deck that describes the tool. It is part of the mandatory su
 
 **Depends on:** [REQ-0055](analytics.md#req-0055), [REQ-0056](non-functional.md#req-0056). The slides present the metrics and the trade-offs.
 
-**Evidence:** Proven by: the six slides in [`site/slides/deck.html`](../../site/slides/deck.html), in English, `es-419` and `pt-BR`. Each number comes from `site/numbers.json` and the numbers test checks it. `python3 scripts/export_slides.py` builds the three PDFs of six pages each. See [delivery](../build/delivery.md#presentation).
+**Evidence:** Proven by: the six slides in [the deck](https://rdorta27.github.io/sentinel-engine-site/slides/deck.html), in English, `es-419` and `pt-BR`. Each number comes from [`numbers.json`](https://github.com/rdorta27/sentinel-engine-site/blob/main/site/numbers.json) and the numbers check in this repository. `python3 scripts/export_slides.py` in the site repository builds the three PDFs of six pages each. See [delivery](../build/delivery.md#presentation).
 
 <a id="req-0037"></a>
 ### REQ-0037 · Video pitch

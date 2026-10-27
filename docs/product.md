@@ -65,7 +65,7 @@ The loop is Understand → Decide → Act → Verify → Escalate. See the [arch
 
 There is no public demo. Run the service locally. The local service serves `router_v2`, a prompted GLM 5.3 Flash, prompt `v2`. The sealed v8 hash is `2efe5962…` ([delivery](build/delivery.md)).
 
-The [project site](../site/index.html) shows these numbers with their denominators. The [evidence index](../evidence/README.md) lists every run. A simulation is not a production measurement.
+The [project site](https://rdorta27.github.io/sentinel-engine-site/) shows these numbers with their denominators. The [evidence index](../evidence/README.md) lists every run. A simulation is not a production measurement.
 
 ## What we do not claim
 
