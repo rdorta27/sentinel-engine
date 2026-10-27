@@ -1,6 +1,6 @@
 /* Sentinel Engine brand variables — single source of truth.
    Light theme in :root, dark theme in [data-theme="dark"].
-   Covers every var consumed by estilos/base.css plus chat extras.
+   Covers every var consumed by the slide base stylesheet plus chat extras.
    Fonts: Newsreader (titles) + Source Sans 3 (body) + Source Code Pro (mono),
    served locally from branding/fonts/ (OFL) so the page makes no external
    font request. */
