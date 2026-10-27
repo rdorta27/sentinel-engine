@@ -31,7 +31,7 @@ Use these labels in every document, slide and evidence run:
 | Data pipeline (Bronze, Silver, Gold) | **Real** code, run locally | `sentinel_data` on DuckDB | The same package on Databricks |
 | Gold on the public link | **Mock** | A labelled in-memory store (`app/tools/gold.py`) | Gold on Databricks |
 | Gold on a local run | **Real** code, **Synthetic** data | The PII-free DuckDB view, when the file is present | Gold on Databricks |
-| Login and session | **Mock** | Test users with a password fixture. The public link reads a judge users file and sends the credentials in the submission email; the fixture passwords do not work there | The bank identity provider |
+| Login and session | **Mock** | Test users with a password fixture. The public link reads a test users file and sends the credentials in the submission email; the fixture passwords do not work there | The bank identity provider |
 | Advisor | **Mock** | A demo advisor user with a read-only ticket view | A human advisor; tickets go to the bank CRM through a queue ([015](../build/decisions/015-handoff-delivery.md)) |
 | Case store | **Mock** | SQLite, with the same models | PostgreSQL |
 | Dispute policy (window, fraud and amount thresholds) | **Mock**, labelled `synthetic: true` | Team-written country files ([021](../build/decisions/021-dispute-policy-sources.md)) | The bank approved policy |

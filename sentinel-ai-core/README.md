@@ -39,18 +39,18 @@ The fixture users exist only in the labelled mock. A local run reads the real
 Gold file when it exists, so these logins have no charges. Set
 `SENTINEL_GOLD_SOURCE=mock` for the demo.
 
-## Demo entry (evaluators only)
+## Demo entry (demo users only)
 
 With `SENTINEL_DEMO_AUTH=1` the login page offers four one-click personas
 (normal in es-MX, ambiguous in pt-BR on the Mexican account, high amount in
 es-CO, "not me" in es-AR) under a banner stating the data is simulated:
 `POST /api/v1/auth/demo/{persona}`. Without the flag the route answers 404 and
 the user-and-password form is the only entry. The public link sets
-`SENTINEL_DEMO_PERSONAS=0`, so the one-click entry answers 404 and the judges
-use the credentials of the submission email.
+`SENTINEL_DEMO_PERSONAS=0`, so the one-click entry answers 404 and a demo user
+uses the credentials of the submission email.
 
 Limitation: a persona id alone proves nothing about identity. One-click
-sign-in is a demo shortcut for evaluators, never an authentication method;
+sign-in is a demo shortcut for demo users, never an authentication method;
 keep the flag off outside the demo.
 
 ## Screens

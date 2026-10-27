@@ -146,7 +146,7 @@ REQ-0044 (neutral Spanish (es-419)) and REQ-0041 (original currency). The countr
 
 ### Main risk
 
-**We have no Portuguese data to build with.** The dataset confirms it: all text is in Spanish, with Mexican, Colombian and Argentine variants. No Lusophone country is in the data. The evaluators will likely still test in Portuguese, like a hidden test set.
+**We have no Portuguese data to build with.** The dataset confirms it: all text is in Spanish, with Mexican, Colombian and Argentine variants. No Lusophone country is in the data. A bank team will likely still test in Portuguese, like a hidden test set.
 
 ### Strategy
 

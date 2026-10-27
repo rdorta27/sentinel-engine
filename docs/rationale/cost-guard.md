@@ -8,7 +8,7 @@ last_reviewed: 2026-10-05
 
 **Choice:** a daily budget caps the model spend. When the spend of the day reaches the cap, the keyword baseline answers the next turns and the turn log records `budget` as the route.
 
-**Why:** a public link with a real model has no natural limit ([REQ-0026](../requirements/non-functional.md#req-0026), [REQ-0055](../requirements/analytics.md#req-0055)). A stuck client or a curious judge must not run up the bill.
+**Why:** a public link with a real model has no natural limit ([REQ-0026](../requirements/non-functional.md#req-0026), [REQ-0055](../requirements/analytics.md#req-0055)). A stuck client or a curious reader must not run up the bill.
 
 **Evidence:**
 

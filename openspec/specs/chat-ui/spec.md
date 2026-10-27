@@ -223,7 +223,7 @@ When `SENTINEL_DEMO_AUTH=1`, the entry SHALL offer demo personas that sign in wi
 
 #### Scenario: A persona opens its case
 
-- **WHEN** the evaluator chooses the high-amount persona
+- **WHEN** the demo user chooses the high-amount persona
 - **THEN** a session for the Colombian fixture customer starts in es-CO under the demo banner
 
 ### Requirement: The customer sees how each turn was resolved in plain language

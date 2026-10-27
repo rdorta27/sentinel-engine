@@ -52,7 +52,7 @@ last_reviewed: 2026-10-05
 ## Public repository and deployment
 
 - Put no credentials, API keys or restricted data in the repository. Add `.gitignore` and `.env` in the **first commit**. Anything that enters the git history stays exposed, even if we delete it later.
-- The deployed link is an attack surface. The evaluators may try an injection. We use rate limits, a spending cap and test sessions.
+- The deployed link is an attack surface. A bank team may try an injection. We use rate limits, a spending cap and test sessions.
 
 ### Controls on the served app (10/2 hardening)
 

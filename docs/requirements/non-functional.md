@@ -124,7 +124,7 @@ A trusted test session proves the identity. A customer number alone does not pro
 The deploy script keeps the file on an Azure Files share. A restart can then keep an unexpired session. The team redeployed the public revision with that share on 2026-10-03. The cases survived a revision restart ([REQ-0035](delivery.md#req-0035)).
 
 - The public link has no one-click entry. `SENTINEL_DEMO_PERSONAS=0` makes `GET /api/v1/auth/demo` and `POST /api/v1/auth/demo/{persona}` answer 404, and the advisor login keeps its password (`tests/test_demo_auth.py`).
-- The judge users file holds salted hashes only. The documented fixture passwords fail on the link. The script writes the file and an ignored password sheet, and it prints no password (`tests/test_make_judge_users.py`, `tests/test_judge_users_cases.py`). The deploy copies the file to the share and sets the flag ([deploy notes](../../deploy/azure/README.md), [`judge-access`](../../openspec/changes/archive/2026-10-05-judge-access/tasks.md)).
+- The test users file holds salted hashes only. The documented fixture passwords fail on the link. The script writes the file and an ignored password sheet, and it prints no password (`tests/test_make_judge_users.py`, `tests/test_judge_users_cases.py`). The deploy copies the file to the share and sets the flag ([deploy notes](../../deploy/azure/README.md), [`judge-access`](../../openspec/changes/archive/2026-10-05-judge-access/tasks.md)).
 
 <a id="req-0028"></a>
 ### REQ-0028 · Reproducible setup

@@ -12,7 +12,7 @@ The repository SHALL document one false, test-only credential per active role (c
 
 #### Scenario: Each role can sign in from docs alone
 
-- **WHEN** a reviewer follows the documented credential for a role, with the flag for the advisor
+- **WHEN** a reader follows the documented credential for a role, with the flag for the advisor
 - **THEN** the session carries that role and lands on the matching view
 
 ### Requirement: Customer and advisor roles enforced in code

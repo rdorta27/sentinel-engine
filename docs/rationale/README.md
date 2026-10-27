@@ -6,7 +6,7 @@ last_reviewed: 2026-10-04
 
 # Rationale
 
-Why the system is built this way. The evaluators are the readers. Each page explains one choice, so it can go into the [presentation](../build/delivery.md#presentation) and the [video](../build/delivery.md#video-pitch).
+Why the system is built this way. A bank team and a developer are the readers. Each page explains one choice, so it can go into the [presentation](../build/delivery.md#presentation) and the [video](../build/delivery.md#video-pitch).
 
 This folder is not a decision log. The [decisions](../build/decisions/) record *what* we chose. These pages explain *why*, what we rejected, what changes in production, and the sentence for the slide.
 
