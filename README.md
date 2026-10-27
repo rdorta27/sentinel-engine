@@ -1,6 +1,6 @@
 # Sentinel Engine
 
-> **Status:** active development. There is no public demo: run it locally ([Run it locally](#run-it-locally)). The history is in the [changelog](CHANGELOG.md).
+> **Status:** active development. There is no public demo: run it locally ([Run it locally](#run-it-locally)). The [project site](https://rdorta27.github.io/sentinel-engine-site/) has the overview, the diagrams and the slides. The history is in the [changelog](CHANGELOG.md).
 
 **The AI talks. The rules decide.**
 
@@ -8,7 +8,7 @@ A bank customer says "I do not recognize this charge". Sentinel finds the charge
 
 Transaction disputes for a bank in México, Colombia and Argentina · Prototype
 
-Read more: [Product](docs/product.md) · [What is real](docs/architecture/what-is-real.md) · [Evidence index](evidence/README.md) · [Metrics report](docs/build/metrics-report.md)
+Read more: [Project site](https://rdorta27.github.io/sentinel-engine-site/) · [Product](docs/product.md) · [What is real](docs/architecture/what-is-real.md) · [Evidence index](evidence/README.md) · [Metrics report](docs/build/metrics-report.md)
 
 ![The customer chat in Spanish (es-MX): the customer names a charge, confirms it, and gets a verified dispute. The left panel shows each step. The right panel shows the claims and the recent charges.](docs/build/screenshots/ui-product/chat-es-MX-desktop.png)
 
@@ -97,8 +97,9 @@ The [metrics report](docs/build/metrics-report.md) gives the intervals, the brea
 
 | You want to know | Go to |
 |---|---|
-| What the original brief asks and how it is scored | [The brief](docs/overview.md) |
+| Where the project started and what the first brief asked | [The brief](docs/overview.md) |
 | What the product does for a bank | [Product](docs/product.md) · [Project site](https://rdorta27.github.io/sentinel-engine-site/) |
+| What it would take to run this at a bank | [Project site](https://rdorta27.github.io/sentinel-engine-site/) · [What is real](docs/architecture/what-is-real.md) |
 | Which parts are real and which are mocks | [What is real](docs/architecture/what-is-real.md) · [Mocks](docs/architecture/mocks.md) |
 | Why we chose transaction disputes | [Flow selection](docs/build/flows/03-flow-selection.md) |
 | Why each main choice, with its evidence | [Rationale](docs/rationale/README.md) · [Decisions](docs/build/decisions/) |
