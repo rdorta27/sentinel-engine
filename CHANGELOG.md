@@ -9,15 +9,18 @@ last_reviewed: 2026-10-27
 All notable changes to this repository are in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-The project marks each milestone with a tag. `1.0.0` is the delivered state and `1.0.1` is the archived record. The headings `v0.9-demo` and `v1.0-submission` below are the planned milestone names; the tag `1.0.0` replaced them.
+The project marks each milestone with a tag. `1.0.0` is the delivered state, `1.0.1` is the archived record and `1.1.0` moves the site to its own repository. The headings `v0.9-demo` and `v1.0-submission` below are the planned milestone names; the tag `1.0.0` replaced them.
 
-## Unreleased
+## 1.1.0 - 2026-10-27
 
-### 2026-10-27
+The project site now has its own repository. This repository keeps the product, the evidence and the generator of the numbers that the site publishes.
 
-- Publish the project site from its own repository, `rdorta27/sentinel-engine-site`, at https://rdorta27.github.io/sentinel-engine-site/.
+- Publish the project site from `rdorta27/sentinel-engine-site` at https://rdorta27.github.io/sentinel-engine-site/.
 - Write `numbers.json` to `../site/site/numbers.json` by default and accept `--out` for a CI clone of the site repository.
-- Remove the old copy under `site/` and its workflow.
+- Add the `site-numbers` workflow to compare the published copy with the evidence.
+- Move the two numbers checks to `scripts/test_site_numbers.py`.
+- Remove the old copy under `site/`, its generators and its workflow.
+- Mark the project site and GitHub Pages as done in the delivery page.
 
 ## 1.0.1 - 2026-10-26
 
