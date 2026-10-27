@@ -1,0 +1,44 @@
+name: site-numbers
+
+# The site repository holds a copy of site/numbers.json from the frozen runs in
+# evidence/. This workflow builds the file again and compares it with that copy,
+# so a change to the evidence or to the generator cannot leave the published
+# site stale. The site repository cannot run this check: the evidence lives here.
+
+on:
+  push:
+    paths:
+      - "evidence/**"
+      - "scripts/site_numbers.py"
+      - ".github/workflows/site-numbers.yml"
+  pull_request:
+    paths:
+      - "evidence/**"
+      - "scripts/site_numbers.py"
+      - ".github/workflows/site-numbers.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: rdorta27/sentinel-engine-site
+          path: site-repo
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: The copy in the site repository matches the evidence
+        run: |
+          if ! python3 scripts/site_numbers.py --check --out site-repo/site/numbers.json; then
+            echo "::error::numbers.json in rdorta27/sentinel-engine-site is stale. Run python3 scripts/site_numbers.py here, commit the new ../site/site/numbers.json in the site repository, and push it."
+            exit 1
+          fi
