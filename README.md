@@ -118,7 +118,7 @@ The [documentation index](docs/README.md) gives the full reading order.
 | **Product code** | |
 | [`sentinel-ai-core/`](sentinel-ai-core/README.md) | The service: FastAPI, the orchestrator, the policy engine, the tools, the chat page and the advisor view (`app/`). The evaluation harness with the development cases, the sealed held-out set and the resolution set (`eval/`). The tests, with the adversarial suite (`tests/`). |
 | [`sentinel-data-engine/`](sentinel-data-engine/README.md) | The medallion pipeline (S3 → Bronze → Silver → Gold) on Delta Lake. 13 LATAM Bank tables, about 19 M records. |
-| [`deploy/azure/`](deploy/azure/README.md) | The Azure Container Apps deployment script, the judge users and the log queries. The demo is retired; kept as a reference |
+| [`deploy/azure/`](deploy/azure/README.md) | The Azure Container Apps deployment script, the demo users and the log queries. The demo is retired; kept as a reference |
 | **Proof** | |
 | [`evidence/`](evidence/README.md) | Frozen, reproducible runs. Each run has its scripts and a `summary.json`. The index gives the status and the data type of each run. |
 | [`docs/build/metrics-report.md`](docs/build/metrics-report.md) | The full measurement, with intervals and limits |

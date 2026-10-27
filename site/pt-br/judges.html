@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Para o júri · Sentinel Engine</title>
-<meta name="description" content="Caminho para a produção, como reproduzir uma execução, IA responsável e respostas curtas às perguntas de um jurado.">
+<title>Avaliar · Sentinel Engine</title>
+<meta name="description" content="Caminho para a produção, como reproduzir uma execução, IA responsável e respostas curtas.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css">
@@ -29,11 +29,11 @@ main { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
 <div class="wrap">
   <!--site:header--><header class="top">
     <a class="logo" href="index.html"><img src="../favicon.svg" width="34" height="34" alt="">Sentinel</a>
-    <nav aria-label="Principal"><a href="index.html">Início</a><a href="diagrams/architecture.html">Arquitetura</a><a href="diagrams/turn.html">Um turno</a><a href="diagrams/cases.html">Casos</a><a href="diagrams/evidence.html">Evidências</a><a href="judges.html" aria-current="page">Para o júri</a><a href="slides/deck.html">Slides</a><a class="cta" href="https://github.com/rdorta27/sentinel-engine">GitHub</a></nav>
+    <nav aria-label="Principal"><a href="index.html">Início</a><a href="diagrams/architecture.html">Arquitetura</a><a href="diagrams/turn.html">Um turno</a><a href="diagrams/cases.html">Casos</a><a href="diagrams/evidence.html">Evidências</a><a href="judges.html" aria-current="page">Avaliar</a><a href="slides/deck.html">Slides</a><a class="cta" href="https://github.com/rdorta27/sentinel-engine">GitHub</a></nav>
     <div class="lang" role="group" aria-label="Idioma" data-t="keep"><a lang="en" hreflang="en" data-lang="en" href="../judges.html" title="English (United States)">English (US)</a><a lang="es-419" hreflang="es-419" data-lang="es-419" href="../es-419/judges.html" title="Español (Latinoamérica)">Español (LA)</a><a lang="pt-BR" hreflang="pt-BR" data-lang="pt-br" aria-current="true" href="judges.html" title="Português (Brasil)">Português (BR)</a></div>
   </header><!--/site:header-->
   <main id="main">
-    <h1>Para o júri</h1>
+    <h1>Avaliar</h1>
     <p class="lead">O que um revisor pergunta primeiro: chega à produção?, posso reproduzir?, a IA é responsável? e o que é real?</p>
     <ul class="toc" aria-label="Seções">
       <li><a href="#production">Caminho para a produção</a></li>
@@ -123,7 +123,7 @@ python3 -m eval.run verify 2024Q4-train-v1</code></pre>
     </section>
 
     <section id="questions" aria-labelledby="questions-h">
-      <h2 id="questions-h">Perguntas que um jurado faz</h2>
+      <h2 id="questions-h">Perguntas frequentes</h2>
       <details><summary>Está em produção?</summary><p>Não. É um protótipo. Ele roda o código que a produção rodaria, com mocks documentados. Nenhum número deste site é uma medição de produção.</p></details>
       <details><summary>O que é um mock?</summary><p>Um substituto com o mesmo contrato da peça de produção. A produção troca o backend e mantém o código. A <a href="https://github.com/rdorta27/sentinel-engine/blob/main/docs/architecture/mocks.md">página de mocks</a> lista cada um com seu limite. O <a href="diagrams/architecture.html">diagrama de arquitetura</a> os marca.</p></details>
       <details><summary>Por que o teto de resolução é <span data-num="ceil_resolvable">16</span> de <span data-num-den="ceil_resolvable">56</span>?</summary><p>A política permite resolver só esses casos simulados. Os demais casos devem terminar em uma transferência ou em uma pergunta. Tanto a linha de base quanto o roteador LLM resolvem todos os casos abaixo do teto. O conjunto não consegue distingui-los em resolução.</p></details>
