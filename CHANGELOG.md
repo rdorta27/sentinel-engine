@@ -1,7 +1,7 @@
 ---
 language: en
 style: ASD-STE100
-last_reviewed: 2026-10-05
+last_reviewed: 2026-10-27
 ---
 
 # Changelog
@@ -10,6 +10,14 @@ All notable changes to this repository are in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 The project marks each milestone with a tag. `1.0.0` is the delivered state and `1.0.1` is the archived record. The headings `v0.9-demo` and `v1.0-submission` below are the planned milestone names; the tag `1.0.0` replaced them.
+
+## Unreleased
+
+### 2026-10-27
+
+- Publish the project site from its own repository, `rdorta27/sentinel-engine-site`, at https://rdorta27.github.io/sentinel-engine-site/.
+- Write `numbers.json` to `../site/site/numbers.json` by default and accept `--out` for a CI clone of the site repository.
+- Keep the copy under `site/` and its workflow until the next stage removes them.
 
 ## 1.0.1 - 2026-10-26
 
