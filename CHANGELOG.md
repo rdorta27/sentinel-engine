@@ -17,7 +17,7 @@ The project marks each milestone with a tag. `1.0.0` is the delivered state and 
 
 - Publish the project site from its own repository, `rdorta27/sentinel-engine-site`, at https://rdorta27.github.io/sentinel-engine-site/.
 - Write `numbers.json` to `../site/site/numbers.json` by default and accept `--out` for a CI clone of the site repository.
-- Keep the copy under `site/` and its workflow until the next stage removes them.
+- Remove the old copy under `site/` and its workflow.
 
 ## 1.0.1 - 2026-10-26
 

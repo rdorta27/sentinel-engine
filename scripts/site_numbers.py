@@ -4,7 +4,8 @@
 Every number on the site comes from here. Each entry keeps its source run,
 its field path, its denominator and its data type (what-is-real labels).
 
-The site lives in its own repository, next to this one. The default output is
+The site lives in its own repository, next to this one, and fills its own
+number slots. This script only writes numbers.json. The default output is
 ../site/site/numbers.json. Use --out to write another path, such as a clone of
 the site repository in CI.
 
@@ -265,20 +266,6 @@ def render(data: dict) -> str:
     return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
 
 
-# The code below filled the copy of the site that lived in this repository.
-# It stays only because scripts/localize.py, scripts/test_site.py and
-# scripts/build_*.py still import it. The site repository fills its own slots.
-# removed in stage 5
-#
-# <span data-num="id">, data-num-round="id", data-num-type="id" and
-# data-num-den="id" hold no nested tags. The script writes their text from
-# numbers.json. data-num-round shows a large count in a reading form (79,000+).
-SLOT = re.compile(
-    r'(<(\w+)[^>]*?\bdata-(num|num-round|num-type|num-den)="(\w+)"[^>]*>)(.*?)(</\2>)',
-    re.S,
-)
-
-
 # Markdown pages use <!--n:key-->text<!--/n--> (invisible when rendered).
 # <!--n~:key--> writes the reading form of a large count (79,000+).
 MD_SLOT = re.compile(r"(<!--n(~?):(\w+)-->)(.*?)(<!--/n-->)", re.S)
@@ -299,49 +286,6 @@ def sync_markdown(numbers: dict, check: bool = False) -> list[Path]:
             changed.append(page)
             if not check:
                 page.write_text(new)
-    return changed
-
-
-TYPE_NAMES = {
-    "es-419": {"Test suite": "Suite de pruebas", "Simulation": "Simulación", "Synthetic": "Sintético", "Projection": "Proyección"},
-    "pt-br": {"Test suite": "Suíte de testes", "Simulation": "Simulação", "Synthetic": "Sintético", "Projection": "Projeção"},
-}
-
-
-def loc(text: str, lang: str) -> str:
-    """Decimal comma and thousands point for Portuguese. English and Spanish keep the point."""
-    return text.translate(str.maketrans(",.", ".,")) if lang == "pt-br" else text
-
-
-def slot_text(numbers: dict, kind: str, key: str, lang: str = "en") -> str:
-    entry = numbers[key]
-    if kind == "num":
-        return loc(entry["text"], lang)
-    if kind == "num-round":
-        return loc(rounded(entry), lang)
-    if kind == "num-type":
-        return TYPE_NAMES.get(lang, {}).get(entry["type"], entry["type"])
-    return loc(f"{int(entry['denominator']):,}", lang)
-
-
-def page_lang(page: Path, site: Path) -> str:
-    first = page.relative_to(site).parts[0]
-    return first if first in ("es-419", "pt-br") else "en"
-
-
-def sync_pages(data: dict, site: Path = ROOT / "site") -> list[Path]:
-    """Rewrite the text of each number slot. Return the pages that changed."""
-    changed = []
-    for page in sorted(site.rglob("*.html")):
-        old = page.read_text()
-        lang = page_lang(page, site)
-        new = SLOT.sub(
-            lambda m: m.group(1) + slot_text(data["numbers"], m.group(3), m.group(4), lang) + m.group(6),
-            old,
-        )
-        if new != old:
-            page.write_text(new)
-            changed.append(page)
     return changed
 
 

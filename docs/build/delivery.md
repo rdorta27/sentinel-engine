@@ -37,7 +37,7 @@ The presentation has six slides in English. They are static HTML pages: [the dec
 | 5 | For the bank: the case file of the advisor, the controls that a risk team can audit, the white label and the model cost per resolution | [handoff package](../architecture/specification.md), [branding](../../sentinel-ai-core/app/branding.py), [`resolution-v2`](../../evidence/evaluation-runs/2024Q4-resolution-v2/summary.json) |
 | 6 | Limits and roadmap, with the mocks | [mocks](../architecture/mocks.md), [README roadmap](../../README.md#roadmap) |
 
-Build the PDFs before the submission:
+Build the PDFs before the submission. Run this command in the site repository:
 
 ```bash
 python3 scripts/export_slides.py
@@ -63,7 +63,7 @@ The video is mandatory. It lasts **3 minutes at most**. It shows the solution wo
 
 ## Project site
 
-The site and the slides exist in English, Spanish (Latin America, `es-419`) and Portuguese (`pt-BR`). English is the source and the submission language ([language](#language)). The other two languages are translations for readers. `python3 scripts/localize.py` builds them from the English pages. The site repository holds `site/i18n/` with the dictionaries. The ASD-STE100 rule applies to the English text only.
+The site and the slides exist in English, Spanish (Latin America, `es-419`) and Portuguese (`pt-BR`). English is the source and the submission language ([language](#language)). The other two languages are translations for readers. The site repository builds them from the English pages with `scripts/localize.py`, and holds `site/i18n/` with the dictionaries. The ASD-STE100 rule applies to the English text only.
 
 The static site lives in its own repository, [sentinel-engine-site](https://github.com/rdorta27/sentinel-engine-site). It has plain HTML and CSS and no build step. Its workflow publishes it to GitHub Pages on each push to `main` that changes `site/`.
 

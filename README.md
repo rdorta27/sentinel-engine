@@ -132,7 +132,7 @@ The [documentation index](docs/README.md) gives the full reading order.
 | [sentinel-engine-site](https://github.com/rdorta27/sentinel-engine-site) | The project site in its own repository, in English, Spanish and Portuguese, published at https://rdorta27.github.io/sentinel-engine-site/. The slides (`site/slides/`) and the diagrams (`site/diagrams/`). |
 | [`branding/`](branding/BRANDING.md) | The brand tokens, the fonts and the chat styles |
 | **Tooling** | |
-| [`scripts/`](scripts/) | Repository scripts: site numbers, diagrams, link checks, slide export and load runs |
+| [`scripts/`](scripts/) | Repository scripts: site numbers, link checks and load runs |
 | [`openspec/`](openspec/) | OpenSpec specs and the archive of each change |
 | [`.github/workflows/`](.github/workflows/tests.yml) | CI: both test suites, the Markdown links and the requirement status that the specs cite |
 | [`team/`](team/) | Record of the first phase: plan, tasks and decisions |
