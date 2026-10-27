@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Write site/numbers.json from the frozen summary.json runs.
+"""Write the numbers.json of the site repository from the frozen summary.json runs.
 
 Every number on the site comes from here. Each entry keeps its source run,
 its field path, its denominator and its data type (what-is-real labels).
 
-    python3 scripts/site_numbers.py          # write site/numbers.json
-    python3 scripts/site_numbers.py --check  # exit 1 if the file is stale
+The site lives in its own repository, next to this one. The default output is
+../site/site/numbers.json. Use --out to write another path, such as a clone of
+the site repository in CI.
+
+    python3 scripts/site_numbers.py                 # write ../site/site/numbers.json
+    python3 scripts/site_numbers.py --check         # exit 1 if the file is stale
+    python3 scripts/site_numbers.py --out PATH      # write PATH instead
 """
 
 from __future__ import annotations
@@ -18,7 +23,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "evidence"
-OUT = ROOT / "site" / "numbers.json"
+# The site repository is a sibling of this repository. In CI, pass --out with
+# the path of a fresh clone.
+OUT = ROOT.parent / "site" / "site" / "numbers.json"
+STALE = "numbers.json is stale. Run scripts/site_numbers.py and copy it to the site repository."
 
 ADV = "adversarial/20261005T014816Z"
 ADV_REAL = "adversarial/20261005T204313Z"
@@ -257,6 +265,11 @@ def render(data: dict) -> str:
     return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
 
 
+# The code below filled the copy of the site that lived in this repository.
+# It stays only because scripts/localize.py, scripts/test_site.py and
+# scripts/build_*.py still import it. The site repository fills its own slots.
+# removed in stage 5
+#
 # <span data-num="id">, data-num-round="id", data-num-type="id" and
 # data-num-den="id" hold no nested tags. The script writes their text from
 # numbers.json. data-num-round shows a large count in a reading form (79,000+).
@@ -316,7 +329,7 @@ def page_lang(page: Path, site: Path) -> str:
     return first if first in ("es-419", "pt-br") else "en"
 
 
-def sync_pages(data: dict, site: Path = OUT.parent) -> list[Path]:
+def sync_pages(data: dict, site: Path = ROOT / "site") -> list[Path]:
     """Rewrite the text of each number slot. Return the pages that changed."""
     changed = []
     for page in sorted(site.rglob("*.html")):
@@ -334,29 +347,26 @@ def sync_pages(data: dict, site: Path = OUT.parent) -> list[Path]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true")
+    parser.add_argument("--check", action="store_true", help="exit 1 if the output or a markdown mark is stale")
+    parser.add_argument("--out", type=Path, default=OUT, help="path of numbers.json (default: ../site/site/numbers.json)")
     args = parser.parse_args()
     data = build()
     text = render(data)
+    out = args.out
     if args.check:
-        stale = not OUT.exists() or OUT.read_text() != text
-        for page in OUT.parent.rglob("*.html"):
-            if SLOT.sub(lambda m: m.group(1) + slot_text(data["numbers"], m.group(3), m.group(4), page_lang(page, OUT.parent)) + m.group(6),
-                        page.read_text()) != page.read_text():
-                print(f"stale number in {page.relative_to(ROOT)}")
-                stale = True
+        stale = not out.exists() or out.read_text() != text
         for page in sync_markdown(data["numbers"], check=True):
-            print(f"stale number in {page.relative_to(ROOT)}")
+            print(f"stale number in {page}")
             stale = True
         if stale:
-            print("The site is stale. Run scripts/site_numbers.py.")
+            print(STALE)
             return 1
         print("The site numbers are current.")
         return 0
-    OUT.parent.mkdir(exist_ok=True)
-    OUT.write_text(text)
-    pages = sync_pages(data) + sync_markdown(data["numbers"])
-    print(f"wrote {OUT.relative_to(ROOT)} ({len(METRICS)} numbers), updated {len(pages)} page(s)")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(text)
+    changed = sync_markdown(data["numbers"])
+    print(f"wrote {out} ({len(METRICS)} numbers), updated {len(changed)} markdown page(s)")
     return 0
 
 
